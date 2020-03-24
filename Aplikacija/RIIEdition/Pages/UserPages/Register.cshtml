@@ -1,0 +1,78 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.RegisterModel
+@{
+}
+
+<h3 class="text-center text-dark">Please Register to continue</h3>
+<div class="mx-auto w-75 " >
+<div asp-validation-summary="All" class="text-danger"></div>
+<form method="post">
+    <div class="container ">
+         <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control col-sm-6"/>
+        <span asp-validation-for="UserName" class="text-danger "></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control col-sm-6"/>
+        <span asp-validation-for="Name" class="text-danger "></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control col-sm-6"/>
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="City"></label>
+        <input asp-for="City" class="form-control col-sm-6"/>
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="YearOfBirth"></label>
+        <input asp-for="YearOfBirth" class="form-control col-sm-6"/>
+        <span asp-validation-for="YearOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        Pol: 
+        <label  class="ml-3 mr-3">    M   </label>
+        <input type="radio" asp-for="Gender" value="M" />
+        <label class="ml-3 mr-3">    Z</label>
+         <input type="radio" asp-for="Gender" value="Z" />
+    </div>
+     <div class="form-group">
+        <label asp-for="Index"></label>
+        <input asp-for="Index" class="form-control col-sm-6"/>
+        <span asp-validation-for="Index" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="YearOfStudy"></label>
+        <input asp-for="YearOfStudy" class="form-control col-sm-6"/>
+        <span asp-validation-for="YearOfStudy" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control col-sm-6"/>
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control col-sm-6"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+     <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" class="form-control col-sm-6"/>
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <span class="text-danger">@Model.SifreNisuJednake</span>
+       <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+ 
+ 
+
+    
+
+
+</form>
+   </div>
