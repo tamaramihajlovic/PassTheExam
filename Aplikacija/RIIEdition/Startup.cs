@@ -31,7 +31,14 @@ namespace RIIEdition
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Conn"));
             });
-            services.AddIdentity<User,IdentityRole>()
+            services.AddIdentity<User,IdentityRole>(
+                options=>
+                {
+                    options.Password.RequireDigit=true;
+                    options.Password.RequireNonAlphanumeric=true;
+                    options.Password.RequiredLength=7;
+                }
+            )
             .AddDefaultTokenProviders()
             .AddEntityFrameworkStores<RIIDBContext>();
 
@@ -55,7 +62,7 @@ namespace RIIEdition
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

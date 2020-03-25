@@ -151,3 +151,5 @@ C:\Users\Zika\Desktop\Zivojin\RIIEdition\bin\Debug\netcoreapp3.1\runtimes\win\li
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\RIIEdition.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\Login.cshtml.g.cs
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\Register.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\Logout.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\ConfirmEmail.cshtml.g.cs

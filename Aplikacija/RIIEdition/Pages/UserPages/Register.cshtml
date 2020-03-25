@@ -3,29 +3,29 @@
 @{
 }
 
-<h3 class="text-center text-dark">Please Register to continue</h3>
+<h5 class="text-center text-dark">Molimo Vas da se registrujete da biste nastavili sa korišćenjem aplikacije</h5>
 <div class="mx-auto w-75 " >
 <div asp-validation-summary="All" class="text-danger"></div>
 <form method="post">
     <div class="container ">
          <div class="form-group">
         <label asp-for="UserName"></label>
-        <input asp-for="UserName" class="form-control col-sm-6"/>
+        <input asp-for="UserName" value="ProbaX" class="form-control col-sm-6"/>
         <span asp-validation-for="UserName" class="text-danger "></span>
     </div>
     <div class="form-group">
         <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control col-sm-6"/>
+        <input asp-for="Name" value="ProbaX" class="form-control col-sm-6"/>
         <span asp-validation-for="Name" class="text-danger "></span>
     </div>
      <div class="form-group">
         <label asp-for="LastName"></label>
-        <input asp-for="LastName" class="form-control col-sm-6"/>
+        <input asp-for="LastName" value="ProbaX" class="form-control col-sm-6"/>
         <span asp-validation-for="LastName" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="City"></label>
-        <input asp-for="City" class="form-control col-sm-6"/>
+        <input asp-for="City" value="ProbaX" class="form-control col-sm-6"/>
         <span asp-validation-for="City" class="text-danger"></span>
     </div>
     <div class="form-group">
@@ -35,19 +35,19 @@
     </div>
     <div class="form-group">
         Pol: 
-        <label  class="ml-3 mr-3">    M   </label>
-        <input type="radio" asp-for="Gender" value="M" />
-        <label class="ml-3 mr-3">    Z</label>
+        <label  class="ml-3 mr-3">M</label>
+        <input type="radio" asp-for="Gender" value="M" checked />
+        <label class="ml-3 mr-3">Z</label>
          <input type="radio" asp-for="Gender" value="Z" />
     </div>
      <div class="form-group">
         <label asp-for="Index"></label>
-        <input asp-for="Index" class="form-control col-sm-6"/>
+        <input asp-for="Index" value="17777" class="form-control col-sm-6"/>
         <span asp-validation-for="Index" class="text-danger"></span>
     </div>
      <div class="form-group">
         <label asp-for="YearOfStudy"></label>
-        <input asp-for="YearOfStudy" class="form-control col-sm-6"/>
+        <input asp-for="YearOfStudy" value="1" lass="form-control col-sm-6"/>
         <span asp-validation-for="YearOfStudy" class="text-danger"></span>
     </div>
      <div class="form-group">
@@ -66,13 +66,8 @@
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
     <span class="text-danger">@Model.SifreNisuJednake</span>
-       <button type="submit" class="btn btn-primary">Register</button>
+       <button type="submit" class="btn btn-primary">Registruj profil</button>
     </div>
- 
- 
-
-    
-
 
 </form>
    </div>

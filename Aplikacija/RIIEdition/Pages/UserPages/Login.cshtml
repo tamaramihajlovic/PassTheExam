@@ -2,7 +2,26 @@
 @model RIIEdition.Pages.UserPages.LoginModel
 @{
 }
-<h3 class="text-center text-dark">Please Login</h3>
+<h3 class="text-center text-dark">Molimo Vas da se ulogujete</h3>
+<div asp-validation-summary="All" class="text-danger">
+
+</div>
 <form method="post">
+
+    <div class="form-group">
+        <label asp-for="UserName"></label>
+        <input asp-for="UserName" class="form-control col-sm-6"/>
+        <span asp-validation-for="UserName" class="text-danger "></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" class="form-control col-sm-6"/>
+        <span asp-validation-for="Password" class="text-danger "></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="RememberMe"></label>
+        <input asp-for="RememberMe"  class="custom-checkbox"/>
+        </div>
+        <button type="submit" class="btn btn-primary">Prijavi se</button>
 
 </form>

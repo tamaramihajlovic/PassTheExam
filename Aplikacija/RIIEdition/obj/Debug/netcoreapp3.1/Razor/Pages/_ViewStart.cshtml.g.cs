@@ -19,8 +19,22 @@ using RIIEdition;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 2 "C:\Users\Zika\Desktop\Zivojin\RIIEdition\Pages\_ViewImports.cshtml"
+using Microsoft.AspNetCore.Identity;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "C:\Users\Zika\Desktop\Zivojin\RIIEdition\Pages\_ViewImports.cshtml"
+using RIIEdition.Data;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Pages/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"63aa37c606a9f2c6aca07cbc44772cdfce04b782", @"/Pages/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d32c4884ac230920c6ab95877ba26dc99789ba89", @"/Pages/_ViewImports.cshtml")]
     public class Pages__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998
