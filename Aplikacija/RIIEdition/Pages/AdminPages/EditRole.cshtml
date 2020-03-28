@@ -1,0 +1,52 @@
+﻿@page
+@model RIIEdition.Pages.AdminPages.EditRoleModel
+@{
+}
+<h1>Azuriraj uloge</h1>
+<form method="post">
+    <div class="form-group row">
+        <label asp-for="Id" class="col-md-2 col-form-label"></label>
+        <input asp-for="Id" class="col-md-8 form-control" disabled />
+
+    </div>
+    <div class="row">
+          <label asp-for="RoleName" class="col-md-2 col-form-label"></label>
+        <input asp-for="RoleName" class="col-md-8 form-control" />
+        <span asp-validation-for="RoleName" class="text-danger"></span>
+    </div>
+    <div asp-validation-summary="All" class="text-danger">
+
+    </div>
+    <div class="form-group row">
+        <div class="col-md-10">
+    <button class="btn btn-primary" type="submit">Azuriraj ime uloge</button>
+    <a class="btn btn-primary" asp-page="/AdminPages/ListRoles">Vrati se nazad</a>
+    </div>
+    </div>
+</form>
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Korisnici u ovoj ulozi</h3>
+        </div>
+        <div class="card-body">
+        @if(Model.Users.Any())
+        {
+                foreach (var user in Model.Users)
+                {
+                     <h5 class="card-title">@user.Name</h5>
+                }
+            
+        }else
+        {
+              <h5 class="card-title">Nema korisnika u ovoj ulozi</h5>
+        }
+        </div>
+      
+        <div class="card-footer">
+            <a class="btn btn-primary" asp-page="/AdminPages/EditUsersRoles" asp-route-roleName="@Model.RoleName">
+            Izbaci ili dodaj korisnika u uloge</a>
+        </div>
+    </div>
+   
+

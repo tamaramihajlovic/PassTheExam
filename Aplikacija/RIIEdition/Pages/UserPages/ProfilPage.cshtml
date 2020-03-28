@@ -1,0 +1,60 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.ProfilPageModel
+@{
+
+}
+
+
+<div class="card" style="width: 30%;">
+    <img src="~/AppPictures/no_image.gif" style="width: fit-content;" class="card-img-top" />
+    <div class="card-header">
+         @if(Model.MyUser.PictureFilePath==null)
+            {
+                  <a class="btn btn-primary" href="#">
+           Dodaj profilnu sliku
+            </a>
+            }
+            else
+            {
+                 <a class="btn btn-primary" href="#">
+           Izmeni profilnu sliku
+            </a>
+            }
+       </div>
+    <div class="card-body">
+         <form method="post">
+        <div class="form-group card-title row"><label asp-for="MyUser.UserName">
+        </label>
+        <input asp-for="MyUser.UserName" class="form-control" disabled />
+        </div>
+          <div class="form-group  row"><label asp-for="MyUser.Name">
+        </label>
+        <input asp-for="MyUser.Name" class="form-control" disabled />
+        </div>
+         
+
+          </form>
+    </div>
+    <div class="card-footer">
+       <button class="btn btn-primary" type="submit" 
+      >Izmeni profil</button>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

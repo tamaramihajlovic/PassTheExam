@@ -20521,6 +20521,11 @@
   "RootNamespace": "RIIEdition",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\UserPages\\ProfilPage.cshtml",
+      "TargetPath": "Pages\\UserPages\\ProfilPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\_ViewImports.cshtml",
       "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -20536,8 +20541,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\UserPages\\EditUserProfile.cshtml",
+      "TargetPath": "Pages\\UserPages\\EditUserProfile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\Privacy.cshtml",
       "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\AdminPages\\CreateRole.cshtml",
+      "TargetPath": "Pages\\AdminPages\\CreateRole.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20556,8 +20571,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "TargetPath": "Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\UserPages\\Register.cshtml",
       "TargetPath": "Pages\\UserPages\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\AdminPages\\ListRoles.cshtml",
+      "TargetPath": "Pages\\AdminPages\\ListRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\AdminPages\\EditRole.cshtml",
+      "TargetPath": "Pages\\AdminPages\\EditRole.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20568,6 +20598,11 @@
     {
       "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\Pages\\AdminPages\\EditUsersRoles.cshtml",
+      "TargetPath": "Pages\\AdminPages\\EditUsersRoles.cshtml",
       "FileKind": "mvc"
     },
     {

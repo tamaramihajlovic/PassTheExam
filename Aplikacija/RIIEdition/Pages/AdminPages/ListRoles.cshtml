@@ -1,0 +1,32 @@
+﻿@page
+@model RIIEdition.Pages.AdminPages.ListRolesModel
+@{
+}
+<h1>Sve uloge u nasoj aplikaciji</h1>
+@if(Model.Roles.Any())
+{
+      <a class="btn btn-primary mb-3" asp-page="/AdminPages/CreateRole">Dodaj ulogu</a>
+     foreach(var role in Model.Roles)
+     {
+         <div class="card mb-3">
+            <div class="card-header">Role Id: @role.Id</div>
+            <div class="card-body"><h5 class="card-title">Role Name:@role.Name</h5></div>
+            <div class="card-footer">
+                <a class="btn btn-primary" asp-page="/AdminPages/EditRole" asp-route-id="@role.Id">Azuriraj</a>
+                <a class="btn btn-danger">Izbrisi</a>
+            </div>
+
+         </div>
+     }
+}
+else
+{
+    <div class="card">
+        <div class="card-header">Nije dodata nijedna priviligija</div>
+        <div class="card-body">
+           <h5 class="card-title">Koristite dugme dole da dodate ulogu</h5>
+           <a class="btn btn-primary" asp-page="/AdminPages/CreateRole">Dodaj ulogu</a>
+        </div>
+
+    </div>
+}

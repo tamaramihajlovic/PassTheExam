@@ -1,0 +1,28 @@
+﻿
+@page
+@inject UserManager<User> userManager;
+@model RIIEdition.Pages.AdminPages.EditUsersRolesModel
+@{
+    int i=0;
+}
+<form method="post">
+<div class="card mt-3">
+    <div class="card-header"><h3>Dodaj ili izbaci korisnika iz uloge</h3></div>
+    <div class="card-body">
+        @foreach (var user in Model.Users)
+        {
+          
+        <div class="form-check m-1">
+         <div><input type="checkbox" name="UserNames" value="@user.Id" class="mr-3" 
+         checked="@Model.AreChecked[i++]"/>
+        Ime: @user.Name Prezime: @user.LastName </div>   
+        </div>
+        }
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-primary" type="submit">Azuriraj</button>
+        <a class="btn btn-primary" asp-page="/AdminPages/EditRole" asp-route-id="@Model.Id">Vrati se nazad</a>
+    </div>
+
+</div>
+</form>

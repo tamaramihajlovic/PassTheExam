@@ -22,66 +22,68 @@ namespace RIIEdition.Pages.UserPages
             this.signInManager = signInManager;
         }
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti korisničko ime.")]
-        [Display(Name="Korisničko ime")]
+        [Required(ErrorMessage="Morate uneti korisnicko ime")]
+        [Display(Name="Korisnicko ime")]
         public string UserName{get;set;}
 
 
          [BindProperty]
-        [Required(ErrorMessage="Morate uneti e-mail adresu.")]
+        [Required(ErrorMessage="Morate uneti email adresu")]
         [DataType(DataType.EmailAddress)]
-        [Display(Name="E-mail adresa")]
 
         public string Email{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti lozinku.")]
+        [Required(ErrorMessage="Morate uneti sifru")]
         [DataType(DataType.Password)]
         [Display(Name="Lozinka")]
         public string Password{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate potvrditi lozinku.")]
+        [Required(ErrorMessage="Morate potvrditi lozinku")]
         [DataType(DataType.Password)]
-        [Display(Name="Potvrdite lozinku")]
+        [Display(Name="Potvrdi Lozinku")]
         public string ConfirmPassword{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti grad.")]
-        [Display(Name="Grad")]
+        [Required(ErrorMessage="Grad je obavezno polje")]
         public string City{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti broj indeksa.")]
-        [Range(0,22000)]
-        [Display(Name="Broj indeksa")]
+        [Required(ErrorMessage="Broj indeksa je obavezno polje")]
+        [Range(10000,20000)]
+        [Display(Name="Broj Indeksa")]
         public int Index{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti ime.")]
+        [Required(ErrorMessage="Ime je obavezno polje")]
         [Display(Name="Ime")]
         public string Name{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti prezime.")]
+        [Required(ErrorMessage="Prezime je obavezno polje")]
         [Display(Name="Prezime")]
 
         public string LastName{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti godinu studija.")]
+        [Required(ErrorMessage="Godina studija je obavezno polje")]
         [Display(Name="Godina studija")]
         [Range(1,4)]
         
         
         public int YearOfStudy{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti pol.")]
+        [Required(ErrorMessage="pol je obavezno polje")]
         [Display(Name="Pol")]
         public char Gender{get;set;}
 
 
         [BindProperty]
-        [Required(ErrorMessage="Morate uneti godinu rođenja.")]
+        [Required(ErrorMessage="Godina Rodjenja je obavezno polje")]
         [DataType(DataType.Date)]
-        [Display(Name="Godina rođenja")]
+        [Display(Name="Godina rodjenja")]
         public DateTime YearOfBirth{get;set;}
 
         [BindProperty]
         public string SifreNisuJednake{get;set;}
+
+
+
+
 
         public void OnGet()
         {
@@ -94,7 +96,7 @@ namespace RIIEdition.Pages.UserPages
             {
                 if(Password!=ConfirmPassword)
                 {
-                    SifreNisuJednake="Lozinke koje ste uneli se ne poklapaju. Pokušajte ponovo.";
+                    SifreNisuJednake="Sifre se ne poklapaju";
                     return Page();
                 }
                 var user =new User{
@@ -119,16 +121,22 @@ namespace RIIEdition.Pages.UserPages
                     var token=await userManager.GenerateEmailConfirmationTokenAsync(user);
                     token=System.Web.HttpUtility.UrlEncode(token);
                     var confirmLink=$@"https://localhost:5001/UserPages/ConfirmEmail?userId={user.Id}&token={token}";
-                    var body=$@"<h1>Hvala Vam što ste se registrovali.</h1><br />
-                    <a href={confirmLink}>Logovanje</a>";
-                    await  SendEmail.sendEmail(Email,body,"Registrovanje");
+                    var body=$@"<h1>Hvala Vam sto ste se registrovali</h1><br />
+                    <p>Nadamo se da cete uzivati u nasoj aplikaciji</p><br />
+                    <a href={confirmLink}>Molimo kliknite na link da bi ste se ulogovali</a>";
+            await  SendEmail.sendEmail(Email,body,"Registrovanje u nasoj aplikaciji");
                     return RedirectToPage("/UserPages/ConfirmEmail");
                 }
                 
                     foreach(var error in result.Errors)
                     ModelState.AddModelError("",error.Description);
                     return Page();
+
+               
+                
               
+
+               
             }
         }
     
