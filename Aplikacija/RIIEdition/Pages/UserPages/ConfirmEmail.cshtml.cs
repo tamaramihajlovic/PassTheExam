@@ -35,7 +35,7 @@ namespace RIIEdition.Pages.UserPages
                 return RedirectToPage("/UserPages/Login");
             }
             else{
-                Error="Doslo je do greške prilikom potvrđivanja e-mail adrese. \nMolimo Vas da se obratite administratoru na e-mail adresi: passtheexam.rii@gmail.com. \nHvala Vam što koristite našu aplikaciju";
+                Error="Desila se greska sa konfirmacijom mail.Molimo obratiti se adminisrtoru";
                 return Page();
             }
 

@@ -3,7 +3,7 @@
 @{
 }
 
-<h5 class="text-center text-dark">Molimo Vas da se registrujete da biste nastavili sa korišćenjem aplikacije</h5>
+<h3 class="text-center text-dark">Please Register to continue</h3>
 <div class="mx-auto w-75 " >
 <div asp-validation-summary="All" class="text-danger"></div>
 <form method="post">
@@ -30,14 +30,14 @@
     </div>
     <div class="form-group">
         <label asp-for="YearOfBirth"></label>
-        <input asp-for="YearOfBirth" class="form-control col-sm-6"/>
+        <input asp-for="YearOfBirth"   class="form-control col-sm-6"/>
         <span asp-validation-for="YearOfBirth" class="text-danger"></span>
     </div>
     <div class="form-group">
         Pol: 
-        <label  class="ml-3 mr-3">M</label>
+        <label  class="ml-3 mr-3">    M   </label>
         <input type="radio" asp-for="Gender" value="M" checked />
-        <label class="ml-3 mr-3">Z</label>
+        <label class="ml-3 mr-3">    Z</label>
          <input type="radio" asp-for="Gender" value="Z" />
     </div>
      <div class="form-group">
@@ -66,8 +66,13 @@
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
     <span class="text-danger">@Model.SifreNisuJednake</span>
-       <button type="submit" class="btn btn-primary">Registruj profil</button>
+       <button type="submit" class="btn btn-primary">Register</button>
     </div>
+ 
+ 
+
+    
+
 
 </form>
    </div>
