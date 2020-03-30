@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,11 +26,7 @@ namespace RIIEdition
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages()
-            .AddRazorPagesOptions(options=>
-            {
-                options.Conventions.AuthorizeFolder("/AdminPages");
-            });
+            services.AddRazorPages();
             services.AddDbContext<RIIDBContext>(options=>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Conn"));
@@ -42,24 +37,10 @@ namespace RIIEdition
                     options.Password.RequireDigit=true;
                     options.Password.RequireNonAlphanumeric=true;
                     options.Password.RequiredLength=7;
-                    options.User.RequireUniqueEmail=true;
                 }
             )
             .AddDefaultTokenProviders()
             .AddEntityFrameworkStores<RIIDBContext>();
-
-            services.AddAuthentication()
-            .AddGoogle(options=>
-            {
-                options.ClientId="138805243303-emnk728464fn0jh1p0p3liqe5q11r36o.apps.googleusercontent.com";
-                options.ClientSecret="0tda-zZo9l3bvIJJ7kZh9TAK";
-            })
-            .AddFacebook(options=>
-            {
-                options.AppId="221350008948499";
-                options.AppSecret="efeeaca082bd3cd7016bfe74c2c6ceb1";
-            })
-            ;
 
         }
 

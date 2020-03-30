@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -16,7 +15,7 @@ namespace RIIEdition.Pages.UserPages
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
       [BindProperty]
-      [Display(Name="Korisnicko ime")]
+      [Display(Name="Korisničko ime")]
       public string UserName{get;set;}
       [BindProperty]
       [Display(Name="Lozinka")]
@@ -25,17 +24,14 @@ namespace RIIEdition.Pages.UserPages
       [BindProperty]
       [Display(Name="Zapamti me")]
       public bool RememberMe{get;set;}
-      [BindProperty(SupportsGet=true)]
-      public IList<AuthenticationScheme> ExternalLogins{get;set;}
        
         public LoginModel(UserManager<User> userManager,SignInManager<User> signInManager)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-        public async Task OnGetAsync()
+        public void OnGet()
         {
-            ExternalLogins=(await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
         public async Task<IActionResult> OnPostAsync()
         {
@@ -55,22 +51,15 @@ namespace RIIEdition.Pages.UserPages
                 else
                 {
                            
-                    ModelState.AddModelError("","Logovanje nije uspelo, molimo pokusajte ponovo");
+                    ModelState.AddModelError("","Logovanje nije uspelo. Molimo Vas da pokušate ponovo.");
                     
                 }
             }
             else
             {
-                 ModelState.AddModelError("","Pogresili ste sifru ili korisnicko ime");
+                 ModelState.AddModelError("","Pogrešili ste korisničko ime ili lozinku. Molimo Vas da pokušate ponovo.");
             }
             return Page();
-        }
-        public IActionResult OnPostGoogle(string provider)
-        {
-            
-            var redirectUrl="https://localhost:5001/UserPages/ExternalLoginCallback";
-            var properties=signInManager.ConfigureExternalAuthenticationProperties(provider,redirectUrl);
-            return new ChallengeResult(provider,properties);
         }
     }
 }

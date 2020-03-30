@@ -12,8 +12,8 @@ namespace RIIEdition.Data
             {
                 var credential=new NetworkCredential()
                 {
-                    UserName="halkatran@gmail.com",
-                    Password="kaladontar"
+                    UserName="passtheexam.rii@gmail.com",
+                    Password="proba.proba1"
                 };
                 smtp.UseDefaultCredentials=false;
                 smtp.Credentials=credential;
@@ -25,7 +25,7 @@ namespace RIIEdition.Data
                 message.Subject=subject;
                 message.Body=body;
                 message.IsBodyHtml=true;
-                message.From=new MailAddress("halkatran@gmail.com");
+                message.From=new MailAddress("passtheexam.rii@gmail.com");
                 await smtp.SendMailAsync(message);
 
             }
