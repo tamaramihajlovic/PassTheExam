@@ -2,7 +2,11 @@
 @model RIIEdition.Pages.AdminPages.EditRoleModel
 @{
 }
-<h1>Azuriraj uloge</h1>
+<body>
+  <partial name="_HeaderPartial" />
+    <div class="container">
+        <main role="main" >
+        <h1>Azuriraj uloge</h1>
 <form method="post">
     <div class="form-group row">
         <label asp-for="Id" class="col-md-2 col-form-label"></label>
@@ -50,3 +54,9 @@
     </div>
    
 
+
+        </main>
+    </div>
+<partial name="_ScriptsPartial" />
+
+</body>

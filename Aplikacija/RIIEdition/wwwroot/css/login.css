@@ -1,0 +1,157 @@
+html,body
+{
+  height: 100%;
+  margin: 0;
+}
+
+.register
+{
+    background-image: url(../AppPictures/students.jpg);
+  background-repeat:no-repeat;
+background-size:cover;
+image-rendering: pixelated;
+
+}
+.avatar
+{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.hrar{
+  height: 1px;
+  border-top:1px solid wheat;
+}
+.hrar1
+{
+  height: 1px;
+  border-top:1px solid wheat;
+  margin-left: 5%;
+  margin-right: 5%;
+ 
+}
+.boja
+{
+  background-color: rgba(0,0,0,0.5);
+}
+.textColor
+{
+  color: black;
+}
+.calendar
+{
+  
+  background-color: rgba(2,2,2,0.7);
+display: none;
+margin-top:20px ;
+border-radius: 3%;
+overflow: hidden;
+width: 60%;
+
+  
+}
+.calendarDiv
+{display: flex;
+  justify-content: space-between;
+  font-size: xx-large;
+  color: gainsboro;
+}
+.dani
+{
+  display: flex;
+  justify-content: space-evenly;
+  color: gray;
+}
+.daniKolona
+{
+  display: flex;
+  flex-direction: column;
+  
+  justify-content: center;
+}
+.gornjiKalendar
+{
+  background-image: linear-gradient(rgb(46, 38, 38),rgb(39, 39, 39));
+padding-bottom: 5px;
+
+}
+.donjiKalendar
+{
+
+}
+.timer{
+
+}
+.clickedDate
+{
+  box-sizing: border-box;
+
+  outline-style: ridge;
+  outline-color: black !important;
+  
+}
+.bgKalendar
+{
+  background-image: url(../AppPictures/background1.png);
+  background-position:bottom;
+}
+.aktivna
+{
+  display: block !important;
+}
+.fa-arrow-circle-left:hover,.fa-arrow-circle-right:hover
+{
+  cursor:pointer;
+  
+}
+.spanHover:hover
+{
+  background-image: linear-gradient(rgb(112, 106, 106),#ffe);
+  cursor:pointer;
+}
+
+@media only screen and (max-width: 600px)
+{
+  .calendar
+{
+ 
+width: 95% !important;
+  
+}
+
+
+}
+@media only screen and (max-width: 1000px)
+{
+.calendar
+{
+  width: 75%;
+}
+.stavkeDatuma
+{
+  padding-top: 3px;
+  padding-bottom:3px;
+  display: flex;
+  
+}
+.s10
+{
+  width: 10%;
+}
+
+}
+.gray
+{
+  color: gray;
+}
+.trenutniDan{
+  box-sizing: border-box;
+
+  outline-style: ridge;
+  outline-color: wheat;
+  background-color: blanchedalmond ;
+}
+.selektovanDatum
+{
+
+}

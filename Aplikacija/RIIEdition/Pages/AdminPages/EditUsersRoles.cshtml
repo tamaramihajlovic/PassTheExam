@@ -5,7 +5,11 @@
 @{
     int i=0;
 }
-<form method="post">
+<body>
+  <partial name="_HeaderPartial" />
+    <div class="container">
+        <main role="main" >
+          <form method="post">
 <div class="card mt-3">
     <div class="card-header"><h3>Dodaj ili izbaci korisnika iz uloge</h3></div>
     <div class="card-body">
@@ -26,3 +30,9 @@
 
 </div>
 </form>
+
+        </main>
+    </div>
+<partial name="_ScriptsPartial" />
+
+</body>

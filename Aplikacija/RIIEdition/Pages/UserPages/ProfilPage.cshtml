@@ -3,9 +3,11 @@
 @{
 
 }
-
-
-<div class="card" style="width: 30%;">
+<body>
+  <partial name="_HeaderPartial" />
+    <div class="container">
+        <main role="main" >
+        <div class="card" style="width: 30%;">
     <img src="~/AppPictures/no_image.gif" style="width: fit-content;" class="card-img-top" />
     <div class="card-header">
          @if(Model.MyUser.PictureFilePath==null)
@@ -56,5 +58,13 @@
 
 
 
+
+
+
+        </main>
+    </div>
+<partial name="_ScriptsPartial" />
+
+</body>
 
 

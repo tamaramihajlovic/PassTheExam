@@ -150,6 +150,44 @@ namespace RIIEdition.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("RIIEdition.Data.CalendarData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("CeoDan")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("Dan")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Mesec")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NazivDogadjaja")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Pocetak")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Zavrestak")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("opisDogadjaja")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("CalendarData");
+                });
+
             modelBuilder.Entity("RIIEdition.Data.User", b =>
                 {
                     b.Property<string>("Id")
@@ -289,6 +327,13 @@ namespace RIIEdition.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.CalendarData", b =>
+                {
+                    b.HasOne("RIIEdition.Data.User", "User")
+                        .WithMany("CalendarData")
+                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }

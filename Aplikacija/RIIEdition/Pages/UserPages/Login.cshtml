@@ -1,43 +1,93 @@
 ﻿@page
 @model RIIEdition.Pages.UserPages.LoginModel
 @{
+    int k=0;
 }
-<div class="row">
-    <div class="col-md-6">
-    <h3 class="text-center text-dark">Please Login</h3>
+@section css
+{
+    <link rel="stylesheet" href="~/css/Index.css" />
+    
+
+}
+@section Scripts
+{
+    
+}
+
+<body class="books">
+  <partial name="_HeaderPartial" />
+    
+        <main role="main" >
+            <div class="centriraj">
+           <div class="container w-100">
+   
+    <h3 class="text-center text-white">Molim vas ulogujte se</h3>
         <div asp-validation-summary="All" class="text-danger">
 
    </div>
 <form method="post">
 
     <div class="form-group">
-        <label asp-for="UserName"></label>
+        <label asp-for="UserName" class="text-white"></label>
         <input asp-for="UserName" class="form-control "/>
         <span asp-validation-for="UserName" class="text-danger "></span>
     </div>
     <div class="form-group">
-        <label asp-for="Password"></label>
+        <label asp-for="Password" class="text-white"></label>
         <input asp-for="Password" class="form-control "/>
         <span asp-validation-for="Password" class="text-danger "></span>
     </div>
     <div class="form-group">
-        <label asp-for="RememberMe"></label>
+        <div>
+        <label asp-for="RememberMe" class="text-white"></label>
         <input asp-for="RememberMe"  class="custom-checkbox"/>
         </div>
-        <button type="submit" class="btn btn-primary">Uloguj se</button>
+        
+        </div>
+        <div class="row justify-content-end mr-3">
+            <button type="submit" class="btn btn-primary">Uloguj se</button>
+        </div>
+        <div class="row justify-content-center">
+           <div class="text-white"> Nemas nalog?&nbsp;<a asp-page="/UserPages/Register" class="text-primary">Registruj se!</a></div>
 
+        </div>
+        <div class="row justify-content-center"> <a class="text-primary" asp-page="/UserPages/ResetPassword">Zaboravili ste sifru
+        </a></div>
     </form>
-</div>
-<div class="col-md-6">
-    <h3 class="text-center text-dark">External Logins</h3>
+   <hr class="hrar" />
     <form method="post">
+        
     @foreach (var provider in Model.ExternalLogins)
     {
-        <button class="btn btn-primary" type="submit" name="provider" value="@provider.Name"
+        @if(k==0)
+        {
+         k++;
+        
+        <div class="row justify-content-center w-100">
+        <button class="btn btn-danger w-50 mt-3 mb-3" type="submit" name="provider" value="@provider.Name"
         title="Login using @provider.DisplayName" asp-page-handler="Google">
-            @provider.DisplayName
+        <span class="fa fa-google"></span>
         </button>
+        </div>
+        }
+        else
+        {
+            <div class="row justify-content-center w-100">
+        <button class="btn btn-primary w-50 mb-3" type="submit" name="provider" value="@provider.Name"
+        title="Login using @provider.DisplayName" asp-page-handler="Google">
+        <span class="fa fa-facebook"></span>
+        </button>
+        </div>
+
+        }
     }
+
      </form>
 </div>
 </div>
+
+        </main>
+    
+<partial name="_ScriptsPartial" />
+
+</body>

@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -43,10 +45,11 @@ namespace RIIEdition.Pages.UserPages
         [Display(Name="Potvrdi Lozinku")]
         public string ConfirmPassword{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Grad je obavezno polje")]
+        [Display(Name="Grad")]
+    [Required(ErrorMessage="Grad je obavezno polje")]
         public string City{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Broj indeksa je obavezno polje")]
+    [Required(ErrorMessage="Broj indeksa je obavezno polje")]
         [Range(10000,20000)]
         [Display(Name="Broj Indeksa")]
         public int Index{get;set;}
@@ -60,26 +63,29 @@ namespace RIIEdition.Pages.UserPages
 
         public string LastName{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="Godina studija je obavezno polje")]
+    [Required(ErrorMessage="Godina studija je obavezno polje")]
         [Display(Name="Godina studija")]
         [Range(1,4)]
         
         
         public int YearOfStudy{get;set;}
         [BindProperty]
-        [Required(ErrorMessage="pol je obavezno polje")]
+     [Required(ErrorMessage="pol je obavezno polje")]
         [Display(Name="Pol")]
         public char Gender{get;set;}
 
 
         [BindProperty]
-        [Required(ErrorMessage="Godina Rodjenja je obavezno polje")]
+     [Required(ErrorMessage="Godina Rodjenja je obavezno polje")]
         [DataType(DataType.Date)]
         [Display(Name="Godina rodjenja")]
         public DateTime YearOfBirth{get;set;}
 
         [BindProperty]
         public string SifreNisuJednake{get;set;}
+        [BindProperty]
+        [Display(Name="Dodajte korisnicku sliku")]
+        public IFormFile Photo{get;set;}
 
 
 
@@ -91,7 +97,12 @@ namespace RIIEdition.Pages.UserPages
         public async Task<IActionResult> OnPostAsync()
         {
             if(!ModelState.IsValid)
-            return Page();
+            {
+                
+                return Page();
+              
+            }
+            
             else
             {
                 if(Password!=ConfirmPassword)
@@ -99,6 +110,15 @@ namespace RIIEdition.Pages.UserPages
                     SifreNisuJednake="Sifre se ne poklapaju";
                     return Page();
                 }
+                string fileName=null;
+                if(Photo!=null)
+                {
+                    
+                    fileName="wwwroot/UserPictures/"+Guid.NewGuid().ToString()+"."+Photo.FileName.Split('.')[1].TrimEnd('\\');
+                    Photo.CopyTo(new FileStream(fileName,FileMode.Create));
+
+                }
+                
                 var user =new User{
                     Email=Email,
                     City=City,
@@ -108,19 +128,20 @@ namespace RIIEdition.Pages.UserPages
                     YearOfBirth=YearOfBirth,
                     YearOfStudy=YearOfStudy,
                     Gender=Gender,
-                    UserName=UserName
+                    UserName=UserName,
+                    PictureFilePath=fileName
                 };
                 var result=await userManager.CreateAsync(user,Password);
                
 
-              //var res=await signInManager.PasswordSignInAsync(UserName,Password,false,false);
+            var res=await signInManager.PasswordSignInAsync(UserName,Password,false,false);
 
                 
                 if(result.Succeeded)
                 {
                     var token=await userManager.GenerateEmailConfirmationTokenAsync(user);
                     token=System.Web.HttpUtility.UrlEncode(token);
-                    var confirmLink=$@"https://localhost:5001/UserPages/ConfirmEmail?userId={user.Id}&token={token}";
+                    var confirmLink=$@"httpslocalhost:5001/UserPages/ConfirmEmail?userId={user.Id}&token={token}";
                     var body=$@"<h1>Hvala Vam sto ste se registrovali</h1><br />
                     <p>Nadamo se da cete uzivati u nasoj aplikaciji</p><br />
                     <a href={confirmLink}>Molimo kliknite na link da bi ste se ulogovali</a>";

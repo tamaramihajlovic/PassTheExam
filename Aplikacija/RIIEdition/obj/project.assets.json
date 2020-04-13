@@ -8537,19 +8537,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Dusan\\.nuget\\packages\\": {}
+    "C:\\Users\\Zika\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Elektronski_fakultet\\RIIEdition\\RIIEdition.csproj",
+      "projectUniqueName": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj",
       "projectName": "RIIEdition",
-      "projectPath": "D:\\Elektronski_fakultet\\RIIEdition\\RIIEdition.csproj",
-      "packagesPath": "C:\\Users\\Dusan\\.nuget\\packages\\",
-      "outputPath": "D:\\Elektronski_fakultet\\RIIEdition\\obj\\",
+      "projectPath": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj",
+      "packagesPath": "C:\\Users\\Zika\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Dusan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Zika\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

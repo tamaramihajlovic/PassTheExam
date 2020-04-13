@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
 
 namespace RIIEdition.Data
@@ -20,5 +21,7 @@ namespace RIIEdition.Data
         public string PictureFilePath{get;set;}
         
         public DateTime YearOfBirth {get;set;}
+
+        public IList<CalendarData> CalendarData{get;set;}
     }
 }

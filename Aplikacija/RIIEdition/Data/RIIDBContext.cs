@@ -10,6 +10,7 @@ namespace RIIEdition.Data
         {
             
         }
+        public DbSet<CalendarData> CalendarData{get;set;}
           protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

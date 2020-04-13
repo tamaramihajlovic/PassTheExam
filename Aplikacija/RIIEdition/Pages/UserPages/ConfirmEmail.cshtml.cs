@@ -30,6 +30,7 @@ namespace RIIEdition.Pages.UserPages
 
             var user=await userManager.FindByIdAsync(userId);
             var result=await userManager.ConfirmEmailAsync(user,token);
+            
             if(result.Succeeded)
             {
                 return RedirectToPage("/UserPages/Login");
