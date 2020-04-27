@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
+  "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\RIIEdition.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,123 +20521,123 @@
   "RootNamespace": "RIIEdition",
   "Documents": [
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Privacy.cshtml",
-      "TargetPath": "Pages\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\CreateRole.cshtml",
-      "TargetPath": "Pages\\AdminPages\\CreateRole.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ResetPassword.cshtml",
-      "TargetPath": "Pages\\UserPages\\ResetPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Calendar.cshtml",
-      "TargetPath": "Pages\\UserPages\\Calendar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ProfilPage.cshtml",
-      "TargetPath": "Pages\\UserPages\\ProfilPage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Shared\\_ScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\_ViewStart.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ConfirmEmail.cshtml",
-      "TargetPath": "Pages\\UserPages\\ConfirmEmail.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Logout.cshtml",
-      "TargetPath": "Pages\\UserPages\\Logout.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\Calendar.cshtml",
+      "TargetPath": "Pages\\UserPages\\Calendar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\EditUsersRoles.cshtml",
-      "TargetPath": "Pages\\AdminPages\\EditUsersRoles.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Register.cshtml",
-      "TargetPath": "Pages\\UserPages\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\ListUsers.cshtml",
-      "TargetPath": "Pages\\AdminPages\\ListUsers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ChangePassword.cshtml",
-      "TargetPath": "Pages\\UserPages\\ChangePassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Shared\\_Layout.cshtml",
       "TargetPath": "Pages\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\ConfirmEmail.cshtml",
+      "TargetPath": "Pages\\UserPages\\ConfirmEmail.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\ListRoles.cshtml",
-      "TargetPath": "Pages\\AdminPages\\ListRoles.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\EditUserProfile.cshtml",
-      "TargetPath": "Pages\\UserPages\\EditUserProfile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\EditRole.cshtml",
-      "TargetPath": "Pages\\AdminPages\\EditRole.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\Shared\\_HeaderPartial.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Shared\\_HeaderPartial.cshtml",
       "TargetPath": "Pages\\Shared\\_HeaderPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Login.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\Register.cshtml",
+      "TargetPath": "Pages\\UserPages\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\ProfilPage.cshtml",
+      "TargetPath": "Pages\\UserPages\\ProfilPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\Login.cshtml",
       "TargetPath": "Pages\\UserPages\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\AdminPages\\EditRole.cshtml",
+      "TargetPath": "Pages\\AdminPages\\EditRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\EditUserProfile.cshtml",
+      "TargetPath": "Pages\\UserPages\\EditUserProfile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\AdminPages\\CreateRole.cshtml",
+      "TargetPath": "Pages\\AdminPages\\CreateRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\Logout.cshtml",
+      "TargetPath": "Pages\\UserPages\\Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\ExternalLoginCallback.cshtml",
       "TargetPath": "Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Shared\\_ScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\ChangePassword.cshtml",
+      "TargetPath": "Pages\\UserPages\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\AdminPages\\ListUsers.cshtml",
+      "TargetPath": "Pages\\AdminPages\\ListUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\UserPages\\ResetPassword.cshtml",
+      "TargetPath": "Pages\\UserPages\\ResetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Privacy.cshtml",
+      "TargetPath": "Pages\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\AdminPages\\ListRoles.cshtml",
+      "TargetPath": "Pages\\AdminPages\\ListRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\AdminPages\\EditUsersRoles.cshtml",
+      "TargetPath": "Pages\\AdminPages\\EditUsersRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     }
   ],
