@@ -28,24 +28,45 @@
                         </li>
                         }
                     </ul>
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="login-register-dropdown-container navbar-nav ml-auto">
                         @if(signInManager.IsSignedIn(User))
-                        {
-                            <li class="nav-item">
-                            <a class="nav-link btn btn-link text-white" asp-page="/userPages/ProfilPage">@User.Identity.Name</a>
-                            </li>
-                                <li class="nav-item">
-                                     
-                                    <form method="post">
-                                        <button class="nav-link btn btn-link text-white mr-4" asp-page="/UserPages/Logout">
+                        {       
+                                <button type="button" class="btn btn-secondary" style="cursor: not-allowed; pointer-events: none;" aria-haspopup="true" aria-expanded="false">
+                                    <ul class="navbar-nav">
+                                        <div class="nav-item">
+                                            <img src="~/AppPictures/no_image.gif" style="width: 35px; height: 37px" class="card-img-top rounded-circle" />
+                                        </div>
+                                        <div class="nav-item">
+                                                <div class="ml-2 mt-1"> @User.Identity.Name </div>
+                                        </div>
+                                    </ul> 
+                                
+                                </button>                            
+                            
+                           
+                            <div class="btn-group ml-auto mr-2">
+                                <button type="button" class="btn btn-secondary dropdown-toggle btn-block" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a asp-page="/userPages/ProfilPage" style="text-decoration: none">
+                                    <button class="dropdown-item ml-2" type="button">Profile</button>                                    
+                                    </a>
+                                    <a asp-page="#" style="text-decoration: none">
+                                    <button class="dropdown-item mb-4 ml-2" type="button">Settings</button>                                    
+                                    </a>                                                                     
+                                    <form class="dropdown-item border-top" method="post">
+                                        <button class="nav-link btn btn-link text-dark" asp-page="/UserPages/Logout">
                                             Logout 
                                         </button>
-                                    </form>
-                                </li>
+                                    </form>     
+                                </div>
+                            </div>                    
                         }
                         else 
                         {
-                             <li class="nav-item"><a class="nav-link text-white" asp-page="/UserPages/Login">Login</a></li>
+                         <li class="nav-item"><a class="nav-link text-white" asp-page="/UserPages/Login">Login</a></li>
                          <li class="nav-item"><a class="nav-link text-white mr-4  " asp-page="/UserPages/Register">
                          Register
                          </a>
