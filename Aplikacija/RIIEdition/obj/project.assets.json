@@ -8542,11 +8542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\RIIEdition.csproj",
+      "projectUniqueName": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
       "projectName": "RIIEdition",
-      "projectPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\RIIEdition.csproj",
+      "projectPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
       "packagesPath": "C:\\Users\\Dusan\\.nuget\\packages\\",
-      "outputPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\Edit\\RIIEdition\\obj\\",
+      "outputPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\si.20.45.pass_the_exam_rii_edition\\Aplikacija\\RIIEdition\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Dusan\\AppData\\Roaming\\NuGet\\NuGet.Config",

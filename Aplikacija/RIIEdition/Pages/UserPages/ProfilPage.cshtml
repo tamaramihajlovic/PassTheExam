@@ -3,166 +3,58 @@
 @{
 
 }
-<head>
-      <link rel="stylesheet" href="~/css/UserPages/ProfilePage.css" />
-</head>
 <body>
   <partial name="_HeaderPartial" />
-    <div class="container-fluid">
+    <div class="container">
         <main role="main" >
-
-
-          <div class="wrapper">
-            <!-- Sidebar Holder -->
-            <nav id="sidebar">
-                <div class="sidebar-header">
-                    <h3>Slika i username</h3>
-                </div>
-
-                <ul class="list-unstyled components">
-                    <p>Profile navigation</p>
-                    <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Upravljanje profilom</a>
-                        <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
-                                <a href="#">Pregled profila</a>
-                            </li>
-                            <li>
-                                <a href="#">Izmena profila</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Aktivnosti</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Fleš kartice</a>
-                            </li>
-                            <li>
-                                <a href="#">Kvizovi</a>
-                            </li>
-                            <li>
-                                <a href="#">Kalendar</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Favorites</a>
-                    </li>
-                    <li>
-                        <a href="#">Grafikoni</a>
-                    </li>
-                    <li>
-                        <a href="#">Podešavanja profila</a>
-                    </li>                    
-                </ul>
-
-                        <form class="dropdown-item border-top" method="post">
-                            <button class="nav-link btn btn-link text-white" asp-page="/UserPages/Logout">
-                                 Logout 
-                            </button>
-                        </form> 
-
-            </nav>
-
-            <!-- Page Content Holder -->
-            <div id="content">
-
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                    <div class="container-fluid">
-
-                        <button type="button" id="sidebarCollapse" class="navbar-btn">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-align-justify"></i>
-                        </button>
-
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="nav navbar-nav ml-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="#">Profilna slika</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Korisnički podaci</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                
-                <h2>Izmena profila</h2>
-                <div class="container-fluid div-izmena-profila d-flex flex-column">
-                  <form method="post">
-                        <input asp-for="MyUser.Id" type="hidden"/>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Username:</label>
-                          <input class="text-center" asp-for="MyUser.UserName" value=@Model.MyUser.UserName/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Email:</label>
-                          <input class="text-center" asp-for="MyUser.Email" value=@Model.MyUser.Email/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Ime:</label>
-                          <input class="text-center" asp-for="MyUser.Name" value=@Model.MyUser.Name/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Prezime:</label>
-                          <input class="text-center" asp-for="MyUser.LastName" value=@Model.MyUser.LastName/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Pol:</label>
-                          <input class="text-center" asp-for="MyUser.Gender" value=@Model.MyUser.Gender/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Godina rođenja:</label>
-                          <input class="text-center" asp-for="MyUser.YearOfBirth" value=@Model.MyUser.YearOfBirth/>
-                        </div>                        
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Broj telefona:</label>
-                          <input class="text-center" asp-for="MyUser.PhoneNumber" value=@Model.MyUser.PhoneNumber/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Grad:</label>
-                          <input class="text-center" asp-for="MyUser.City" value=@Model.MyUser.City/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Indeks:</label>
-                          <input class="text-center" asp-for="MyUser.Index" value=@Model.MyUser.Index/>
-                        </div>
-                        <div class="d-flex flex-column w-25 p-2">
-                          <label>Godina studija:</label>
-                          <input class="text-center" asp-for="MyUser.YearOfStudy" value=@Model.MyUser.YearOfStudy/>
-                        </div>
-                        <label>Podsetnik promena usernama i passworda u podesavanjima stranice okida zahtev za ponovnim logovanjem</label>                        
-
-                      <div>
-                          <button type="submit">Sacuvaj izmene</button>
-                      </div>
-                  </form>
-                </div>
-
-            </div>
+        <div class="card" style="width: 30%;">
+    <img src="~/AppPictures/no_image.gif" style="width: fit-content;" class="card-img-top" />
+    <div class="card-header">
+         @if(Model.MyUser.PictureFilePath==null)
+            {
+                  <a class="btn btn-primary" href="#">
+           Dodaj profilnu sliku
+            </a>
+            }
+            else
+            {
+                 <a class="btn btn-primary" href="#">
+           Izmeni profilnu sliku
+            </a>
+            }
+       </div>
+    <div class="card-body">
+         <form method="post">
+        <div class="form-group card-title row"><label asp-for="MyUser.UserName">
+        </label>
+        <input asp-for="MyUser.UserName" class="form-control" disabled />
         </div>
+          <div class="form-group  row"><label asp-for="MyUser.Name">
+        </label>
+        <input asp-for="MyUser.Name" class="form-control" disabled />
+        </div>
+         
 
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <!-- Popper.JS -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-        <!-- Bootstrap JS -->
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+          </form>
+    </div>
+    <div class="card-footer">
+       <button class="btn btn-primary" type="submit" 
+      >Izmeni profil</button>
+    </div>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').toggleClass('active');
-                    $(this).toggleClass('active');
-                });
-            });
-        </script>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -171,7 +63,8 @@
 
         </main>
     </div>
-  <partial name="_ScriptsPartial" />
+<partial name="_ScriptsPartial" />
+
 </body>
 
 
