@@ -1,0 +1,126 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.BazaBlanketaModel
+@{
+}
+@section css
+{
+    <link rel="stylesheet" href="~/css/bazablanketa.css" />
+    
+}
+@section Scripts
+{
+    <script src="~/js/bazablanketa.js" ></script>
+}
+<body>
+  <partial name="_HeaderPartial" />
+    <div class="container">
+        <main role="main" >
+            <h1 class="m-4">Baza podataka blanketa</h1>
+            @if(Model.MaterijalData.Count!=0)
+            {
+
+            
+            @foreach(var blanket in Model.MaterijalData)
+            {
+                <div class="row justify-content-between">
+           <div class="box ">
+        <div class="about">
+            <h2>Naziv:@blanket.NazivMaterijala</h2>
+            <p>Predmet:@blanket.PredmetMaterijala 
+                </p>
+            
+        </div>
+        <div class="figure">
+                
+        </div>
+
+    </div>
+    <div class="user-raiting col">
+        <!--User raitong blanketi-->
+        <span class="heading">User Rejting</span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star checked"></span>
+<span class="fa fa-star"></span>
+<p class="opis">4.1 zasnovano na 254 ocene.</p>
+<hr style="border:3px solid #f1f1f1">
+
+
+  <div class="side">
+    <div> 5</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-5"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div class="broj5">32</div>
+  </div>
+  <div class="side">
+    <div> 4</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-4"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div class="broj4">3</div>
+  </div>
+  <div class="side">
+    <div> 3</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-3"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>43</div>
+  </div>
+  <div class="side">
+    <div> 2</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-2"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>@blanket.brojOcenaDva</div>
+  </div>
+  <div class="side">
+    <div> 1</div>
+  </div>
+  <div class="middle">
+    <div class="bar-container">
+      <div class="bar-1"></div>
+    </div>
+  </div>
+  <div class="side right">
+    <div>@blanket.brojOcenaJedan</div>
+  </div>
+</div>
+
+    </div>
+
+    @if(signInManager.IsSignedIn(User)){
+    <button class="btn btn-secondary mb-4">Oceni   <span class="fa fa-comment"></span></button>
+    }
+    else{
+        <a asp-page="/UserPages/Login">Ulogujete se da komentarisete i ocenite</a>
+    }
+            }
+        
+            }
+            else {
+                <h2 class="m-3">Nemata unetih blanketa u bazi</h2>
+            }
+        </main>
+    </div>
+<partial name="_ScriptsPartial" />
+
+
+</body>

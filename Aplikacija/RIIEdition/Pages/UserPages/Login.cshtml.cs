@@ -15,14 +15,17 @@ namespace RIIEdition.Pages.UserPages
     {
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
+        [Required(ErrorMessage="Ovo polje je obavezno")]
       [BindProperty]
       [Display(Name="Korisnicko ime")]
       public string UserName{get;set;}
       [BindProperty]
+      [Required(ErrorMessage="Ovo polje je obavezno")]
       [Display(Name="Lozinka")]
       [DataType(DataType.Password)]
       public string Password{get;set;}
       [BindProperty]
+
       [Display(Name="Zapamti me")]
       public bool RememberMe{get;set;}
       [BindProperty(SupportsGet=true)]
@@ -39,6 +42,11 @@ namespace RIIEdition.Pages.UserPages
         }
         public async Task<IActionResult> OnPostAsync()
         {
+            ExternalLogins=(await signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            if(!ModelState.IsValid)
+            {
+                return Page();
+            }
             var user=await userManager.FindByNameAsync(UserName);
          
             

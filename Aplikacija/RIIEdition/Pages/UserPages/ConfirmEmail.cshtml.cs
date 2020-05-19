@@ -33,7 +33,7 @@ namespace RIIEdition.Pages.UserPages
             
             if(result.Succeeded)
             {
-                return RedirectToPage("/UserPages/Login");
+                return RedirectToPage("/Index");
             }
             else{
                 Error="Desila se greska sa konfirmacijom mail.Molimo obratiti se adminisrtoru";

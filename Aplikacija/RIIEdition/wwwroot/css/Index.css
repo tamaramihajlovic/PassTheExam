@@ -83,3 +83,16 @@ image-rendering: pixelated;
 {
   background-color: blueviolet;
 }
+@media  only screen and (max-width:991px)
+{
+  .centriraj
+  {
+    width: 70% !important;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .centriraj
+  {
+    width: 95% !important;
+  }
+} 

@@ -8,5 +8,4 @@ el.addEventListener("change",()=>{
 label.innerHTML=el.value;
 })
 
-document.body.addEventListener("click",()=>console.log(el));
 });

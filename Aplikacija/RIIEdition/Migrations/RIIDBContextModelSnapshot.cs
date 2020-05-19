@@ -188,12 +188,117 @@ namespace RIIEdition.Migrations
                     b.ToTable("CalendarData");
                 });
 
+            modelBuilder.Entity("RIIEdition.Data.FlashCardData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NazivPredmeta")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Ocena")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Opis")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tezina")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("FlashCardData");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.MaterijalData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("NazivMaterijala")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OdgovoriMaterijala")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PitanjaMaterijala")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PredmetMaterijala")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("brojOcenaCetiri")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojOcenaDva")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojOcenaJedan")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojOcenaPet")
+                        .HasColumnType("int");
+
+                    b.Property<int>("brojOcenaTri")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("MaterijalData");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.QuizData", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrojOsvojenihPoena")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Ocena")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Predmet")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Tezina")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("QuizData");
+                });
+
             modelBuilder.Entity("RIIEdition.Data.User", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BrojLajkova")
                         .HasColumnType("int");
 
                     b.Property<string>("City")
@@ -219,6 +324,9 @@ namespace RIIEdition.Migrations
 
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Level")
+                        .HasColumnType("int");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -254,6 +362,9 @@ namespace RIIEdition.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
+
+                    b.Property<int>("UkupanBrojOsvojenihPoena")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(256)")
@@ -333,6 +444,27 @@ namespace RIIEdition.Migrations
                 {
                     b.HasOne("RIIEdition.Data.User", "User")
                         .WithMany("CalendarData")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.FlashCardData", b =>
+                {
+                    b.HasOne("RIIEdition.Data.User", "User")
+                        .WithMany("FlashCardData")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.MaterijalData", b =>
+                {
+                    b.HasOne("RIIEdition.Data.User", "User")
+                        .WithMany("MaterijalData")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.QuizData", b =>
+                {
+                    b.HasOne("RIIEdition.Data.User", "User")
+                        .WithMany("QuizData")
                         .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618

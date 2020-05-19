@@ -141,7 +141,7 @@ namespace RIIEdition.Pages.UserPages
                 {
                     var token=await userManager.GenerateEmailConfirmationTokenAsync(user);
                     token=System.Web.HttpUtility.UrlEncode(token);
-                    var confirmLink=$@"httpslocalhost:5001/UserPages/ConfirmEmail?userId={user.Id}&token={token}";
+                    var confirmLink=$@"https://localhost:5001/UserPages/ConfirmEmail?userId={user.Id}&token={token}";
                     var body=$@"<h1>Hvala Vam sto ste se registrovali</h1><br />
                     <p>Nadamo se da cete uzivati u nasoj aplikaciji</p><br />
                     <a href={confirmLink}>Molimo kliknite na link da bi ste se ulogovali</a>";

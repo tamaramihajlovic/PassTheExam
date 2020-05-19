@@ -1,0 +1,156 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.RelaksacijaModel
+@{
+}
+@section css
+{
+      <link rel="stylesheet" href="~/css/relaksacija.css" />
+}
+
+   
+
+<body>
+      <div class="bg"></div>
+    <div class="bg2"></div>
+    <div class="kontejner">
+       
+       
+        <div id="left">
+            <h1>Zakrzljali refleksi</h1>
+            <p>Relaksirajte se brzo
+            </p>
+        </div>
+        <div id="right">
+            <ul>
+                <li id="0">
+                     <img src="/AppPictures/slike/lak.jpg" />
+                     <span>
+                         <strong>Lak nivo</strong>
+                         <p>Ako vam je ovo prvi put da igrate</p>
+                     </span>
+                    
+                </li>
+                <li id="1">
+                     <img src="/AppPictures/slike/srednji.jpg" />
+                     <span>
+                         <strong>Srednji nivo</strong>
+                         <p>Za vec uigrani igrace sa dobrim refleksima</p>
+                     </span>
+                    
+                </li>
+                <li id="2">
+                     <img src="/AppPictures/slike/tezak.jpg" />
+                     <span>
+                         <strong>Tezak nivo</strong>
+                         <p>Samo za one najbolje igrace su spremni za izazov</p>
+                     </span>
+                    
+                </li>
+            </ul>
+        </div>
+ 
+    </div>
+    <!--Ovde pocinje login simulacija simulacija-->
+   
+    <!--Zavrsilo se register ovde-->
+    <div id="profil">
+        <div class="box_marquee">
+            <div class="side1_marquee"><span class="marquee"></span></div>
+            <div class="side2_marquee"><span class="marquee"></span></div>
+     
+        </div>
+        <div class="row d-flex justify-content-center " >
+          <!--
+            <div class=" form-group">
+                <label for="pretraziKorisnike">Pretrazite korisnike</label>
+                <input type="text" id="pretraziKorisnike" class="form-control" />
+            </div>
+            -->
+            <div class="d-flex justify-content-center zapIgre">
+                <button class="btn btn-danger" id="zapocniIgruDugme">Zapocni igre</button>
+           </div>
+        </div>
+    </div>
+    <div id="igra1">
+        <div class="row">
+        <div class="col-4" id="prvaIgraObavestenje">Klikcite na polja kad zasvetle sto brze mozete da 
+            ostvarite najbolji rezultat</div>
+            
+                
+       </div>
+      
+
+            
+       <button class="btn btn-primary" id="btn1Igra1">
+        Zapocni
+    </button>
+    <span id="osvojeniPoeniPrvaIgra"> 
+            Osvojeni poeni:
+    </span>
+        <div class="board">
+        
+        </div>
+       
+        <button class="btn btn-danger" id="btnIgra1" >
+             Sledeca igra
+        </button>
+
+    </div>
+
+    <div id="igra2">
+        <div class="app">
+            <h1 id="message" class="text-center"></h1>
+        </div>
+        <div class="con" id="rotirajucaKocka">
+            <div class="stage">
+              <div class="komp">
+                <div class="top face">5</div>
+                <div class="left face">4</div>
+                <div class="right face">3</div>
+                <div class="back face">6</div>
+                <div class="front face">1</div>
+                <div class="bottom face">2</div>
+               </div>
+    
+            </div>
+        </div>
+        <div class="container" id="sakrijDivKocka">
+            <div class="row justify-content-center">
+        <div id="inputDrugaIgra" class="form-group col-lg-6 col-md-8 col-sm-12">
+            <label>Unesite broj koji videte kad kocka stane</label>
+            <input type="text" class="form-control" id="inputKocka" />
+        </div>
+    </div>  
+     <div class="row justify-content-between">
+        <div id="drugaIgraPoeni" class="col-lg-4 col-sm-12 col-md-8 col">Broj pogodjenih brojeva:0</div>
+       
+    </div>
+    <div class="row justify-content-center mt-4 ">
+<button class="btn btn-primary" id="kraj">
+Poslednja strana
+</button></div>
+    </div>
+
+    </div>
+    <!--Ovde se zavrsava druga igra-->
+    <div id="poslednjaStrana" >
+        <div class="container">
+        <h3 class="text-white">Cestitam uspeli ste <span id="poslednjeIme"></span></h3>
+        <h2 class="text-white" id="osvPoeni">Vasi refleksi su izuzetni i na kraju ste osvojili:</h2>
+        <h1 class="text-white">Nadam se da ste uzivali</h1>
+        <div class="row justify-content-start  mt-3">
+        <button class="btn btn-primary mr-5" id="nazadPocetak">Ispocetka</button>
+        <a class="btn btn-danger" asp-page="/Index">Pocetna</a>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+ <script src="~/js/src/relaksacija.js" type="module"></script>
+
+<partial name="_ScriptsPartial" />
+
+</body>

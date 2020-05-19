@@ -94,6 +94,7 @@ padding-bottom: 5px;
 {
   background-image: url(../AppPictures/background1.png);
   background-position:bottom;
+  overflow:hidden !important;
 }
 .aktivna
 {
@@ -107,11 +108,15 @@ padding-bottom: 5px;
 .spanHover:hover
 {
   background-image: linear-gradient(rgb(112, 106, 106),#ffe);
-  cursor:pointer;
+  cursor:pointer !important;
 }
 
 @media only screen and (max-width: 600px)
 {
+  .Modal-content
+  {
+    width: 85% !important;
+  }
   .calendar
 {
  
@@ -123,6 +128,10 @@ width: 95% !important;
 }
 @media only screen and (max-width: 1000px)
 {
+  .Modal-content
+  {
+    width: 75% !important;
+  }
 .calendar
 {
   width: 75%;
@@ -154,4 +163,52 @@ width: 95% !important;
 .selektovanDatum
 {
 
+}
+.izabraniDatumi
+{
+  box-sizing: border-box;
+}
+/*    */
+.Modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+@keyframes animatetop
+{
+  from {top:-300px; opacity: 0;}
+  to  {top: 0; opacity: 1;}
+}
+.Modal-content
+{
+  position: relative;
+  background-color: #fefefe;
+  margin:5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  animation-name: animatetop;
+  animation-duration: 1s;
+}
+.close
+{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }

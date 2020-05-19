@@ -19,9 +19,23 @@ namespace RIIEdition.Data
         public string City {get;set;}
 
         public string PictureFilePath{get;set;}
+
+        public int Level{get;set;}
+
+        public int UkupanBrojOsvojenihPoena{get;set;}
+
+        public int BrojLajkova{get;set;}
         
         public DateTime YearOfBirth {get;set;}
 
         public IList<CalendarData> CalendarData{get;set;}
+
+         public IList<MaterijalData> MaterijalData{get;set;}
+
+         public IList<QuizData> QuizData{get;set;}
+
+         
+
+         public IList<FlashCardData> FlashCardData{get;set;}
     }
 }

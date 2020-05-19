@@ -7,7 +7,6 @@ namespace RIIEdition.Data
         public int Dan {get;set;}
 
         public string opisDogadjaja{get;set;}
-
         public string Pocetak{get;set;}
 
         public string Zavrestak{get;set;}
