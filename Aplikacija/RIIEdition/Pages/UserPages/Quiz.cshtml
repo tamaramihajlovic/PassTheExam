@@ -1,0 +1,40 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.QuizModel
+@{
+}
+@section css
+{
+      <link rel="stylesheet" href="~/css/quiz.css" />
+}
+@section Scripts
+{
+    <script src="~/js/quiz.js" type="module"></script>
+}
+<body>
+    <div id="@Model.Predmet" class="prviElement" style="display: none;"></div>
+    <div id = "kont" class="container">
+        <div id="question-container" class="pitanja-kontejner">
+            <div id = "question" class = "pitanje">Pitanje</div>
+            <div id = "answer-buttons" class = "btn-grid">
+                <button class = "btn" id = "A">A</button>
+                <button class = "btn" id = "B">B</button>
+                <button class = "btn" id = "C">C</button>
+                <button class = "btn" id = "D">D</button>
+            </div>
+        </div>
+        <div class = "help-grid" id = "help-grid-btns">
+            <button id = "help" class = "help-btn">50-50</button>
+            <button id = "next-btn" class = "next-btn dugme">Next</button>
+            <a class="next-btn dugme" style="display: none;" id="krajBtn" asp-page="/UserPages/Kvizovi">Kraj</a>
+        </div>
+
+        <div id = "napredak">
+            <div id = "linijaNapretka">
+                <div id = "popunjavanje"></div>
+            </div>
+            <div id = "brojTacnihOdgovora"></div>
+        </div>
+    </div>
+    
+</body>
+

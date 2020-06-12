@@ -38,10 +38,10 @@
     <div class="user-raiting col">
         <!--User raitong blanketi-->
         <span class="heading">User Rejting</span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
+<span class="fa fa-star "></span>
 <span class="fa fa-star"></span>
 <p class="opis">4.1 zasnovano na 254 ocene.</p>
 <hr style="border:3px solid #f1f1f1">
@@ -56,7 +56,7 @@
     </div>
   </div>
   <div class="side right">
-    <div class="broj5">32</div>
+    <div class="broj5">@blanket.brojOcenaPet</div>
   </div>
   <div class="side">
     <div> 4</div>
@@ -67,7 +67,7 @@
     </div>
   </div>
   <div class="side right">
-    <div class="broj4">3</div>
+    <div class="broj4">@blanket.brojOcenaCetiri</div>
   </div>
   <div class="side">
     <div> 3</div>
@@ -78,7 +78,7 @@
     </div>
   </div>
   <div class="side right">
-    <div>43</div>
+    <div class="broj3">@blanket.brojOcenaTri</div>
   </div>
   <div class="side">
     <div> 2</div>
@@ -89,7 +89,7 @@
     </div>
   </div>
   <div class="side right">
-    <div>@blanket.brojOcenaDva</div>
+    <div class="broj2">@blanket.brojOcenaDva</div>
   </div>
   <div class="side">
     <div> 1</div>
@@ -100,17 +100,18 @@
     </div>
   </div>
   <div class="side right">
-    <div>@blanket.brojOcenaJedan</div>
+    <div class="broj1">@blanket.brojOcenaJedan</div>
   </div>
 </div>
 
     </div>
 
     @if(signInManager.IsSignedIn(User)){
-    <button class="btn btn-secondary mb-4">Oceni   <span class="fa fa-comment"></span></button>
+    <a class="btn btn-secondary mb-4" asp-page="/UserPages/OceniBlanket" asp-route-id="@blanket.Id">
+    Oceni   <span class="fa fa-comment"></span></a>
     }
     else{
-        <a asp-page="/UserPages/Login">Ulogujete se da komentarisete i ocenite</a>
+        <a asp-page="/UserPages/Login" class="pink-link">Ulogujete se da komentarisete i ocenite</a>
     }
             }
         

@@ -129,7 +129,8 @@ namespace RIIEdition.Pages.UserPages
                     YearOfStudy=YearOfStudy,
                     Gender=Gender,
                     UserName=UserName,
-                    PictureFilePath=fileName
+                    PictureFilePath=fileName,
+                    OcenjeniBlanketi=null
                 };
                 var result=await userManager.CreateAsync(user,Password);
                

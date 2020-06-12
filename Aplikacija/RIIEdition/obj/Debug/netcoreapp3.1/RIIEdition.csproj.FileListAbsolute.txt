@@ -177,3 +177,7 @@ C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\Use
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\MojiBlanketi.cshtml.g.cs
 C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\BazaBlanketa.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\OceniBlanket.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\Kvizovi.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\FlashCards.cshtml.g.cs
+C:\Users\Zika\Desktop\Zivojin\RIIEdition\obj\Debug\netcoreapp3.1\Razor\Pages\UserPages\Quiz.cshtml.g.cs

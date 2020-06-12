@@ -23,6 +23,7 @@ namespace RIIEdition.Pages.UserPages
         {
            MyUser=await  userManager.FindByNameAsync(User.Identity.Name);
             
+            
         }
     }
 }

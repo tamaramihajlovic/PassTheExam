@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
@@ -17,6 +18,7 @@ namespace RIIEdition.Pages.AdminPages
             this.roleManager = roleManager;
         } 
         [BindProperty]
+        [Display(Name="Naziv uloge")]
         public string RoleName { get; set; }
         public void OnGet()
         {

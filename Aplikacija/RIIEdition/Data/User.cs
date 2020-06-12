@@ -28,7 +28,11 @@ namespace RIIEdition.Data
         
         public DateTime YearOfBirth {get;set;}
 
+
+        public string OcenjeniBlanketi{get;set;}
         public IList<CalendarData> CalendarData{get;set;}
+
+        public IList<Comments> Comments{get;set;}
 
          public IList<MaterijalData> MaterijalData{get;set;}
 

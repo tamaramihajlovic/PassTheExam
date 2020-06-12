@@ -13,6 +13,8 @@ namespace RIIEdition.Data
         public DbSet<CalendarData> CalendarData{get;set;}
 
         public DbSet<MaterijalData> MaterijalData{get;set;}
+
+        public DbSet<Comments> Komentari{get;set;}
           protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

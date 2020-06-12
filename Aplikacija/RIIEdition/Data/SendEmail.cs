@@ -13,7 +13,7 @@ namespace RIIEdition.Data
                 var credential=new NetworkCredential()
                 {
                     UserName="halkatran@gmail.com",
-                    Password="kaladontar"
+                    Password="kaladontar" //ovde ide sifra umesto *
                 };
                 smtp.UseDefaultCredentials=false;
                 smtp.Credentials=credential;

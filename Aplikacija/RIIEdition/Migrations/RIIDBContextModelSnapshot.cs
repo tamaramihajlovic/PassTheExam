@@ -188,6 +188,41 @@ namespace RIIEdition.Migrations
                     b.ToTable("CalendarData");
                 });
 
+            modelBuilder.Entity("RIIEdition.Data.Comments", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("BrojLajkova")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaterijalDataId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OdgovorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("TekstKomentara")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("VremePostavljanja")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ocenjeniUseri")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Komentari");
+                });
+
             modelBuilder.Entity("RIIEdition.Data.FlashCardData", b =>
                 {
                     b.Property<int>("Id")
@@ -345,6 +380,9 @@ namespace RIIEdition.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<string>("OcenjeniBlanketi")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -444,6 +482,13 @@ namespace RIIEdition.Migrations
                 {
                     b.HasOne("RIIEdition.Data.User", "User")
                         .WithMany("CalendarData")
+                        .HasForeignKey("UserId");
+                });
+
+            modelBuilder.Entity("RIIEdition.Data.Comments", b =>
+                {
+                    b.HasOne("RIIEdition.Data.User", "User")
+                        .WithMany("Comments")
                         .HasForeignKey("UserId");
                 });
 

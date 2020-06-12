@@ -1,0 +1,88 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.KvizoviModel
+@{
+}
+@section css
+{
+    <link rel="stylesheet" href="~/css/kvizovi.css" />
+    
+}
+@section Scripts
+{
+    <script src="~/js/kvizovi.js" ></script>
+}
+<body>
+  <partial name="_HeaderPartial" />
+   
+           <!-- <a class="alert-link" asp-page="/UserPages/Quiz">Kviz</a>
+            <a asp-page="/UserPages/FlashCards">Flash kartice</a> -->
+         <a href="/UserPages/FlashCards" class="link">  
+       <div class="rightHalf">
+           <img src="/AppPictures/FlashCards.jpeg" />
+          
+       </div>
+       </a>  
+       <a href="/UserPages/Quiz" class="link">
+         <div class="leftHalf">
+              <img src="/AppPictures/quizpic.jpg" />
+                
+         </div>
+         </a>
+         <div class="container skriveno">
+                <div class="row justify-content-center">
+                    <div class=" mt-5 mr-5 ml-5 mb-4"> <div class="karta" >
+       <div class="imgBox" id="ds">
+           <img src="/AppPictures/DistribuiraniSistemi.jpg" />
+       </div>
+       <div class="details">
+            <h1>Naziv predmeta:</h1>
+            <p>Operativni Sistemi</p>
+       </div>
+   </div></div>
+                    <div class=" mt-5 mr-5 ml-5 mb-4"> <div class="karta" >
+       <div class="imgBox" id="aip">
+           <img src="/AppPictures/AlgoritmiProgramiranje.jpeg" />
+       </div>
+       <div class="details">
+            <h1>Naziv predmeta:</h1>
+            <p>Algoritmi i programiranje</p>
+       </div>
+   </div></div>
+                    <div class=" mt-5 mr-5 ml-5 mb-4"> <div class="karta" >
+       <div class="imgBox" id="miks">
+           <img src="/AppPictures/MIKS.jpg" />
+       </div>
+       <div class="details">
+            <h1>Naziv predmeta:</h1>
+            <p>Mikroracunarski sistemi</p>
+       </div>
+   </div></div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class=" mt-5 mr-5 ml-5 mb-4"> <div class="karta" >
+       <div class="imgBox" id="softversko">
+           <img src="/AppPictures/softversko.jpg" />
+       </div>
+       <div class="details">
+            <h1>Naziv predmeta:</h1>
+            <p>softversko</p>
+       </div>
+   </div></div>
+                    <div class=" mt-5 mr-5 ml-5 mb-4"> <div class="karta" >
+       <div class="imgBox" id="web">
+           <img src="/AppPictures/WebProgramiranje.jpg" />
+       </div>
+       <div class="details">
+            <h1>Naziv predmeta:</h1>
+            <p>Web programiranje</p>
+       </div>
+   </div></div>
+                </div>
+         </div>
+       
+
+  
+<partial name="_ScriptsPartial" />
+
+</body>
+

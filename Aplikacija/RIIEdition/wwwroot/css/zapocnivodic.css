@@ -5,6 +5,7 @@
 }
 body{
     background: #000000;
+    font-family: sans-serif;
 }
 body span video
 {
@@ -81,10 +82,22 @@ section .box span:nth-child(3){
         transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px,-50px,150px) scale(.8) !important;
     }
 
-}
+    
+    .centar{
+      display:none !important;
+       
 
+    }
+    .mali{
+        display: block !important;
+    }
+}
+.mali {
+    display: none !important;
+}
 @media only screen and (max-width:520px){
     section .box div{
+        margin-left: 30px !important;
         transform: rotateX(-10deg) rotateY(15deg) translate3d(-75px,-50px,150px) scale(.5) !important;
     }
 
@@ -98,3 +111,49 @@ a{
     top: 15px;
 
 }
+.centar{
+
+    margin-left: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+      color: #fff;
+      transform:perspective(1000px) translate(-50%,-50%)  skewY(15deg);
+  }
+  .centar h1 span{
+      position: absolute;
+      top: 0;
+      left: 0;
+      
+      margin: 0;
+      padding: 0;
+      font-size: 12em;
+      text-transform: uppercase;
+      transform:perspective(1000px) translate(-50%,-50%) ;
+      transform-style: preserve-3d;
+      transition: 1s;
+  }
+  .centar h1 span:nth-child(1){
+      clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+  }
+  .centar h1 span:nth-child(2){
+      color: #efeeee;
+      transform: translate(-50%,-50%) skewX(-60deg);
+      left: -48px;
+      clip-path: polygon(0 45%,100% 45%,100% 55%,0 55%);
+  }
+  .centar h1 span:nth-child(3){
+      color: #efeeee;
+      transform: translate(-50%,-50%) skewX(0deg);
+     left: -95px;
+      clip-path: polygon(0 55%,100% 55%,100% 100%,0 100%);
+  }
+  
+  .bClass{
+    padding: 0;
+    margin: 0;
+    background: #000;
+    box-sizing: content-box !important;
+    font-family: sans-serif;
+    overflow: hidden;
+  }

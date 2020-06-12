@@ -1,0 +1,286 @@
+﻿@page
+@model RIIEdition.Pages.UserPages.OceniBlanketModel
+@{
+    string src1="/AppPictures/no_image.gif";
+}
+@section css
+{
+    <link rel="stylesheet" href="~/css/oceni-blanket.css" />
+    
+}
+@section Scripts
+{
+    <script src="~/js/oceniblanket.js" ></script>
+}
+<body>
+    
+  
+<partial name="_HeaderPartial" />
+ <div class="container">
+     <main  role="main">
+
+<div class="row justify-content-center mt-5 slika1">
+         <div class="karta">
+     
+       <div class="details">
+             <div class="font-weight-bold">Naziv blanketa:@Model.MaterijalData.NazivMaterijala</div>
+         <div class="mb-3 font-weight-bold">Predmet blanketa:@Model.MaterijalData.PredmetMaterijala</div>
+            @if(Model.Pitanja.Count!=0 || Model.Odgovori.Count!=0)
+            {
+         @for (int i = 0; i < Model.Pitanja.Count-1; i++)
+         {
+             <div>P@(i+1):@Model.Pitanja[i]</div>
+              <div class="mb-4">O@(i+1):@Model.Odgovori[i]</div>
+         }
+            }
+            else{
+                <div>Pitanja u blanketu su prazna :-|</div>
+            }
+       </div>
+   </div>
+   </div>
+
+<div class="row mt-5 justify-content-center">
+    <form method="post">
+          <input style="display: none;" asp-for="Ocena" id="ocena" />
+    <button type="submit" style="background-color: transparent; border: none;"
+    asp-route-id="@Model.MaterijalData.Id" asp-page-handler="Oceni" >
+      
+ <span class="fa fa-star fa-3x" id="1"></span>
+<span class="fa fa-star fa-3x" id="2"></span>
+<span class="fa fa-star fa-3x" id="3"></span>
+<span class="fa fa-star fa-3x" id="4"></span>
+<span class="fa fa-star fa-3x" id="5"></span>
+</button>
+</form>
+</div>
+<div class="row justify-content-center mt-3">
+<p>Ocenite blanket</p>
+</div>
+<div>
+   <h4 class="text-center">Postavljajte komentare i pitanja postujuci i uvazavajuci tudje misljenje!</h4>
+</div>
+<!-- Kontejner za komentare -->
+    <div class="comments-container">
+        
+
+        <ul id="comments-list" class="comments-list">
+            @if(Model.CistiKomentari(Model.MaterijalData.Id).Count>0)
+            @foreach (var komentar in Model.CistiKomentari(Model.MaterijalData.Id))
+            {
+                
+                <li>
+                    <div class="comment-main-level">
+                        <div class="comment-avatar">
+                           @if(komentar.User.PictureFilePath==null)
+                                {
+               
+        
+                                        <img   src="@src1" alt="Nema sliku">
+         
+                                  }
+                                    else
+                                        {
+               
+                                     <img  src="@komentar.User.PictureFilePath.Substring(komentar.User.PictureFilePath.IndexOf('/'))" 
+                                 alt="Nema sliku">
+                                     }
+                                        <!--Zavrsavanje slike naseg uvatara-->
+                                     </div>
+                                     <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="http://creaticode.com/blog">@komentar.User.Name @komentar.User.LastName</a></h6>
+                            <span>Postavljen pre @Model.vratiTacnoVreme(komentar.VremePostavljanja)</span>
+
+                            <i class="fa fa-reply " onclick="otvoryReplyBox(event)">
+                            </i>
+                            <form method="post">
+                            <button class="btn-desni" asp-page-handler="Lajkuj"
+                               asp-route-id="@komentar.Id">
+                            <i class="fa fa-heart" data-toggle="tooltip" data-placement="top" data-original-title="@komentar.BrojLajkova"
+                            onclick="povecajBrojLajkova(event)"></i>
+                            </button></form>
+                            <!--Ovo ispraviti-->
+                           @if(User.IsInRole("Admin")) {
+                               <form method="post">
+                               <button class="btn-desni" asp-page-handler="Obrisi"
+                               asp-route-id="@komentar.Id">
+                                   <i class="fa fa-close"></i>
+                                   </button>
+                                   </form>
+                               
+                           }
+                           @if(await Model.isAdmin(komentar.User))
+                           {
+                           <span style="display: none;" class="admin"></span>
+                           }
+                            
+                            @if(await Model.isProfessor(komentar.User))
+                           {
+                           <span style="display: none;" class="professor"></span>
+                           }
+                        </div>
+                        <div class="comment-content">
+                           @komentar.TekstKomentara
+                        </div>
+                    </div>
+                    </div>
+                <div>
+                
+                    <ul class="comments-list reply-list">
+                            <!-- Odgovor na zadati komentar-->
+                        <li style="display: none;" class="odgovorKomentara">
+                              <div class="comment-avatar">
+                           @if(Model.MyUser.PictureFilePath==null)
+           {
+               
+         
+         <img   src="@src1" alt="Nema sliku">
+         
+           }
+           else
+           {
+               
+               <img  
+               src="@Model.MyUser.PictureFilePath.Substring(Model.MyUser.PictureFilePath.IndexOf('/'))" 
+               alt="Nema sliku">
+           }
+                        <!--Zavrsavanje slike naseg uvatara-->
+                      </div>
+                        <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="http://creaticode.com/blog">@Model.MyUser.Name @Model.MyUser.LastName</a></h6>
+                            
+                           
+                        </div>
+                        <div class="comment-content">
+                            <form method="post">
+                                <input asp-for="KomentarId" value="@komentar.Id" style="display: none;" />
+                            <input  placeholder="Napisite komentar..." asp-for="Odgovor" class="in1"/>
+                            
+                            <button type="submit"  class="btn btn-info mt-3 comment1" asp-page-handler="Odgovori" 
+                            asp-route-id="@Model.MaterijalData.Id" disabled >
+                                Komentarisi
+                                  <i class="fa fa-cloud-upload"></i></button>
+                            </form>
+                        </div>
+                    </div>
+
+                        </li>
+                        @if(Model.nadjiOdgovoreZaDatiKomentar(komentar).Count>0){
+                        @foreach (var odgovor in Model.nadjiOdgovoreZaDatiKomentar(komentar))
+                        {
+                            <li>
+                             <div class="comment-avatar">
+                           @if(odgovor.User.PictureFilePath==null)
+                                {
+               
+        
+                                        <img   src="@src1" alt="Nema sliku">
+         
+                                  }
+                                else{
+              
+                                     <img  src="@odgovor.User.PictureFilePath.Substring(odgovor.User.PictureFilePath.IndexOf('/'))" 
+                                 alt="Nema sliku">
+                                     }
+                                        <!--Zavrsavanje slike naseg uvatara-->
+                                     </div>
+                                     <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="http://creaticode.com/blog">@odgovor.User.Name @odgovor.User.LastName</a></h6>
+                            <span>Postavljen pre @Model.vratiTacnoVreme(odgovor.VremePostavljanja)</span>
+                          
+                            <form method="post">
+                            <button class="btn-desni" asp-page-handler="Lajkuj"
+                               asp-route-id="@odgovor.Id">
+                            <i class="fa fa-heart" data-toggle="tooltip" data-placement="top" data-original-title="@odgovor.BrojLajkova"
+                            onclick="povecajBrojLajkova(event)"></i>
+                            </button></form>
+                            <!--Ovo ispraviti-->
+                           @if(User.IsInRole("Admin")) {
+                               <form method="post">
+                               <button class="btn-desni" asp-page-handler="Obrisi"
+                               asp-route-id="@odgovor.Id">
+                                   <i class="fa fa-close"></i>
+                                   </button>
+                                   </form>
+                               
+                           }
+                             @if(await Model.isAdmin(odgovor.User))
+                           {
+                           <span style="display: none;" class="admin"></span>
+                           }
+                            @if(await Model.isProfessor(odgovor.User))
+                           {
+                           <span style="display: none;" class="professor"></span>
+                           }
+                        </div>
+                        <div class="comment-content">
+                           @odgovor.TekstKomentara
+                        </div>
+                    </div>
+                    </li>
+                        }
+                        }
+                    </ul>
+                 
+                 </div>
+                    
+                </li>
+                <!--Ovde se zavrsava komentar -->
+            }
+            
+            <!--Ovde se zavrsava drugi komentar -->
+            <!--Ovde ispod dodajem moj komentar -->
+            <li>
+                 <div class="comment-main-level mb-5">
+                      <div class="comment-avatar">
+                           @if(Model.MyUser.PictureFilePath==null)
+           {
+               
+         
+         <img   src="@src1" alt="Nema sliku">
+         
+           }
+           else
+           {
+               
+               <img  
+               src="@Model.MyUser.PictureFilePath.Substring(Model.MyUser.PictureFilePath.IndexOf('/'))" 
+               alt="Nema sliku">
+           }
+                        <!--Zavrsavanje slike naseg uvatara-->
+                      </div>
+                        <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="http://creaticode.com/blog">@Model.MyUser.Name @Model.MyUser.LastName</a></h6>
+                            
+                           
+                        </div>
+                        <div class="comment-content">
+                            <form method="post">
+                            <input type="text" placeholder="Napisite komentar..." asp-for="Komentar" id="in"/>
+                            <span id="greska" class="text-danger mt-1 mb-1"></span>
+                            <button type="submit" id="comment" class="btn btn-info mt-3" asp-page-handler="Komentarisi" 
+                            asp-route-id="@Model.MaterijalData.Id" disabled>
+                                Komentarisi
+                                  <i class="fa fa-cloud-upload"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                 </div>
+            </li>
+        </ul>
+    </div>
+
+
+ 
+</div>
+     </main>
+ </div>
+
+		
+<partial name="_ScriptsPartial" />
+ 
+</body>

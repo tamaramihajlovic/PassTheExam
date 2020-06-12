@@ -54,7 +54,8 @@ namespace RIIEdition.Pages.UserPages
         }
          public async  Task<IActionResult> OnPostPrikazi(int id)
         {
-            MaterijalData=db.MaterijalData.ToList();
+            var user=await userManager.GetUserAsync(User);
+            MaterijalData=db.MaterijalData.Where(x=>x.User==user).ToList();
             SelectedData=await db.MaterijalData.FindAsync(id);
             Pitanja=SelectedData.PitanjaMaterijala.Split("###");
             Odgovori=SelectedData.OdgovoriMaterijala.Split("###");
