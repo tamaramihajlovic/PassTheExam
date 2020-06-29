@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj": {}
+    "D:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\RIIEdition.csproj": {}
   },
   "projects": {
-    "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj": {
+    "D:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\RIIEdition.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj",
+        "projectUniqueName": "D:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
         "projectName": "RIIEdition",
-        "projectPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj",
+        "projectPath": "D:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
         "packagesPath": "C:\\Users\\Dusan\\.nuget\\packages\\",
-        "outputPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\obj\\",
+        "outputPath": "D:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Dusan\\AppData\\Roaming\\NuGet\\NuGet.Config",

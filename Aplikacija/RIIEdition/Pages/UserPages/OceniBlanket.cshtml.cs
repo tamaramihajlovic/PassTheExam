@@ -131,13 +131,13 @@ namespace RIIEdition.Pages.UserPages
         public string vratiTacnoVreme(DateTime vreme){
             var time=DateTime.Now-vreme;
            
-          if(Int32.Parse(time.TotalSeconds.ToString().Split(",")[0])<60)
-          return time.TotalSeconds.ToString().Split(",")[0]+" sekundi";
-          else if(Int32.Parse(time.TotalMinutes.ToString().Split(",")[0])<60)
-          return time.TotalMinutes.ToString().Split(",")[0]+" minuta";
-          else if(Int32.Parse(time.TotalHours.ToString().Split(",")[0])<24)
-         return  time.TotalHours.ToString().Split(",")[0]+" sati";
-          else return  time.TotalDays.ToString().Split(",")[0]+" dana";
+          if(Int32.Parse(time.TotalSeconds.ToString().Split(".")[0])<60)
+          return time.TotalSeconds.ToString().Split(".")[0]+" sekundi";
+          else if(Int32.Parse(time.TotalMinutes.ToString().Split(".")[0])<60)
+          return time.TotalMinutes.ToString().Split(".")[0]+" minuta";
+          else if(Int32.Parse(time.TotalHours.ToString().Split(".")[0])<24)
+         return  time.TotalHours.ToString().Split(".")[0]+" sati";
+          else return  time.TotalDays.ToString().Split(".")[0]+" dana";
 
 
             

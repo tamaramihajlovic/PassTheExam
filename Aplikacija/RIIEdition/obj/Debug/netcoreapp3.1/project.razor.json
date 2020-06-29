@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj",
+  "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\RIIEdition.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -20521,188 +20521,188 @@
   "RootNamespace": "RIIEdition",
   "Documents": [
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\OceniBlanket.cshtml",
-      "TargetPath": "Pages\\UserPages\\OceniBlanket.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Relaksacija.cshtml",
-      "TargetPath": "Pages\\UserPages\\Relaksacija.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ZapocniVodic.cshtml",
-      "TargetPath": "Pages\\UserPages\\ZapocniVodic.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\BazaBlanketa.cshtml",
-      "TargetPath": "Pages\\UserPages\\BazaBlanketa.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ConfirmEmail.cshtml",
-      "TargetPath": "Pages\\UserPages\\ConfirmEmail.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Calendar.cshtml",
-      "TargetPath": "Pages\\UserPages\\Calendar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\AdminPages\\ListUsers.cshtml",
-      "TargetPath": "Pages\\AdminPages\\ListUsers.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\_ViewImports.cshtml",
-      "TargetPath": "Pages\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\BlanketNapravi.cshtml",
-      "TargetPath": "Pages\\UserPages\\BlanketNapravi.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\UserPasswordChange.cshtml",
-      "TargetPath": "Pages\\UserPages\\UserPasswordChange.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Kvizovi.cshtml",
-      "TargetPath": "Pages\\UserPages\\Kvizovi.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\_ViewStart.cshtml",
-      "TargetPath": "Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\FlashCards.cshtml",
-      "TargetPath": "Pages\\UserPages\\FlashCards.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Materijali.cshtml",
-      "TargetPath": "Pages\\UserPages\\Materijali.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ProfilPage.cshtml",
-      "TargetPath": "Pages\\UserPages\\ProfilPage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\EditUserProfile.cshtml",
-      "TargetPath": "Pages\\UserPages\\EditUserProfile.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Shared\\_ScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Quiz.cshtml",
-      "TargetPath": "Pages\\UserPages\\Quiz.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\AdminPages\\EditUsersRoles.cshtml",
-      "TargetPath": "Pages\\AdminPages\\EditUsersRoles.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\OMaterijalima.cshtml",
-      "TargetPath": "Pages\\UserPages\\OMaterijalima.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Index.cshtml",
-      "TargetPath": "Pages\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\HallOfFame.cshtml",
-      "TargetPath": "Pages\\UserPages\\HallOfFame.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ExternalLoginCallback.cshtml",
-      "TargetPath": "Pages\\UserPages\\ExternalLoginCallback.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\AdminPages\\ListRoles.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\ListRoles.cshtml",
       "TargetPath": "Pages\\AdminPages\\ListRoles.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ChangePassword.cshtml",
-      "TargetPath": "Pages\\UserPages\\ChangePassword.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\HallOfFame.cshtml",
+      "TargetPath": "Pages\\UserPages\\HallOfFame.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Privacy.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\EditUserProfile.cshtml",
+      "TargetPath": "Pages\\UserPages\\EditUserProfile.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Privacy.cshtml",
       "TargetPath": "Pages\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\ResetPassword.cshtml",
-      "TargetPath": "Pages\\UserPages\\ResetPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Error.cshtml",
-      "TargetPath": "Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\MojiBlanketi.cshtml",
-      "TargetPath": "Pages\\UserPages\\MojiBlanketi.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Shared\\_Layout.cshtml",
-      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Register.cshtml",
-      "TargetPath": "Pages\\UserPages\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\AdminPages\\CreateRole.cshtml",
-      "TargetPath": "Pages\\AdminPages\\CreateRole.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Logout.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Logout.cshtml",
       "TargetPath": "Pages\\UserPages\\Logout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\UserPages\\Login.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\UserPasswordChange.cshtml",
+      "TargetPath": "Pages\\UserPages\\UserPasswordChange.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Login.cshtml",
       "TargetPath": "Pages\\UserPages\\Login.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\AdminPages\\EditRole.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Index.cshtml",
+      "TargetPath": "Pages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\BazaBlanketa.cshtml",
+      "TargetPath": "Pages\\UserPages\\BazaBlanketa.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Shared\\_HeaderPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_HeaderPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\FlashCards.cshtml",
+      "TargetPath": "Pages\\UserPages\\FlashCards.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\MojiBlanketi.cshtml",
+      "TargetPath": "Pages\\UserPages\\MojiBlanketi.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Calendar.cshtml",
+      "TargetPath": "Pages\\UserPages\\Calendar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ZapocniVodic.cshtml",
+      "TargetPath": "Pages\\UserPages\\ZapocniVodic.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\OMaterijalima.cshtml",
+      "TargetPath": "Pages\\UserPages\\OMaterijalima.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Error.cshtml",
+      "TargetPath": "Pages\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Register.cshtml",
+      "TargetPath": "Pages\\UserPages\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ConfirmEmail.cshtml",
+      "TargetPath": "Pages\\UserPages\\ConfirmEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Relaksacija.cshtml",
+      "TargetPath": "Pages\\UserPages\\Relaksacija.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Materijali.cshtml",
+      "TargetPath": "Pages\\UserPages\\Materijali.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ChangePassword.cshtml",
+      "TargetPath": "Pages\\UserPages\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Kvizovi.cshtml",
+      "TargetPath": "Pages\\UserPages\\Kvizovi.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\ListUsers.cshtml",
+      "TargetPath": "Pages\\AdminPages\\ListUsers.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\EditUsersRoles.cshtml",
+      "TargetPath": "Pages\\AdminPages\\EditUsersRoles.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\EditRole.cshtml",
       "TargetPath": "Pages\\AdminPages\\EditRole.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\Pages\\Shared\\_HeaderPartial.cshtml",
-      "TargetPath": "Pages\\Shared\\_HeaderPartial.cshtml",
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\OceniBlanket.cshtml",
+      "TargetPath": "Pages\\UserPages\\OceniBlanket.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\Quiz.cshtml",
+      "TargetPath": "Pages\\UserPages\\Quiz.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Shared\\_ScriptsPartial.cshtml",
+      "TargetPath": "Pages\\Shared\\_ScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\AdminPages\\CreateRole.cshtml",
+      "TargetPath": "Pages\\AdminPages\\CreateRole.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\BlanketNapravi.cshtml",
+      "TargetPath": "Pages\\UserPages\\BlanketNapravi.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ResetPassword.cshtml",
+      "TargetPath": "Pages\\UserPages\\ResetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "TargetPath": "Pages\\UserPages\\ExternalLoginCallback.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\Shared\\_Layout.cshtml",
+      "TargetPath": "Pages\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\UserPages\\ProfilPage.cshtml",
+      "TargetPath": "Pages\\UserPages\\ProfilPage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\wlada-si.20.45.pass_the_exam_rii_edition-33048d4ce41b\\Aplikacija\\RIIEdition\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
     }
   ],
