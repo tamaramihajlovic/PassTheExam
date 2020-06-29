@@ -1,159 +1,142 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-body{
-    background: #000000;
-    font-family: sans-serif;
+body {
+  background: #000000;
+  font-family: sans-serif;
 }
-body span video
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+body span video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
-section
-{
-    position: relative;
-    width: 100%;
-    height: 100vh;
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
 }
-section .box{
-    position: absolute;
-    top: calc(50% - 200px);
-    left: calc(50% - 200px);
-    width: 400px;
-    height: 400px;
-    transform-style: preserve-3d;
-    outline: 1px solid transparent;
-  
-    
+section .box {
+  position: absolute;
+  top: calc(50% - 200px);
+  left: calc(50% - 200px);
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  outline: 1px solid transparent;
 }
-section .box div{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px,-50px,150px);
-    outline: 1px solid transparent;
-    
+section .box div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px, -50px, 150px);
+  outline: 1px solid transparent;
 }
-section .box span video 
-{
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
+section .box span video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
-section .box span
-{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: 1px solid rgba(0, 0, 0, .1);
-    background: #cccccc;
-    outline: 1px solid transparent;
+section .box span {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #cccccc;
+  outline: 1px solid transparent;
 }
-section .box span:nth-child(1){
-    transform: translateZ(200px);
+section .box span:nth-child(1) {
+  transform: translateZ(200px);
+}
+section .box span:nth-child(2) {
+  transform: rotateX(90deg) translateZ(200px);
+}
+section .box span:nth-child(3) {
+  transform: rotateY(-90deg) translateZ(200px);
+}
+@media only screen and (max-width: 750px) {
+  section .box div {
+    transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px, -50px, 150px) scale(0.8) !important;
+  }
 
-}
-section .box span:nth-child(2){
-    transform:rotateX(90deg) translateZ(200px);
-    
-
-}
-section .box span:nth-child(3){
-    transform:rotateY(-90deg) translateZ(200px);
-
-}
-@media only screen and (max-width:750px){
-    section .box div{
-        transform: rotateX(-20deg) rotateY(25deg) translate3d(-75px,-50px,150px) scale(.8) !important;
-    }
-
-    
-    .centar{
-      display:none !important;
-       
-
-    }
-    .mali{
-        display: block !important;
-    }
+  .centar {
+    display: none !important;
+  }
+  .mali {
+    display: block !important;
+  }
 }
 .mali {
-    display: none !important;
+  display: none !important;
 }
-@media only screen and (max-width:520px){
-    section .box div{
-        margin-left: 30px !important;
-        transform: rotateX(-10deg) rotateY(15deg) translate3d(-75px,-50px,150px) scale(.5) !important;
-    }
+@media only screen and (max-width: 520px) {
+  section .box div {
+    margin-left: 30px !important;
+    transform: rotateX(-10deg) rotateY(15deg) translate3d(-75px, -50px, 150px) scale(0.5) !important;
+  }
+}
+a {
+  cursor: pointer;
+}
+.zavrsi {
+  position: absolute;
+  left: 15px;
+  top: 15px;
+}
+.centar {
+  margin-left: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  transform: perspective(1000px) translate(-50%, -50%) skewY(15deg);
+}
+.centar h1 span {
+  position: absolute;
+  top: 0;
+  left: 0;
 
+  margin: 0;
+  padding: 0;
+  font-size: 12em;
+  text-transform: uppercase;
+  transform: perspective(1000px) translate(-50%, -50%);
+  transform-style: preserve-3d;
+  transition: 1s;
 }
-a{
-    cursor: pointer;
+.centar h1 span:nth-child(1) {
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
 }
-.zavrsi{
-    position: absolute;
-    left: 15px;
-    top: 15px;
+.centar h1 span:nth-child(2) {
+  color: #efeeee;
+  transform: translate(-50%, -50%) skewX(-60deg);
+  left: -48px;
+  clip-path: polygon(0 45%, 100% 45%, 100% 55%, 0 55%);
+}
+.centar h1 span:nth-child(3) {
+  color: #efeeee;
+  transform: translate(-50%, -50%) skewX(0deg);
+  left: -95px;
+  clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
 
+.bClass {
+  padding: 0;
+  margin: 0;
+  background: #000;
+  box-sizing: content-box !important;
+  font-family: sans-serif;
+  overflow: hidden;
 }
-.centar{
-
-    margin-left: 5px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-      color: #fff;
-      transform:perspective(1000px) translate(-50%,-50%)  skewY(15deg);
-  }
-  .centar h1 span{
-      position: absolute;
-      top: 0;
-      left: 0;
-      
-      margin: 0;
-      padding: 0;
-      font-size: 12em;
-      text-transform: uppercase;
-      transform:perspective(1000px) translate(-50%,-50%) ;
-      transform-style: preserve-3d;
-      transition: 1s;
-  }
-  .centar h1 span:nth-child(1){
-      clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
-  }
-  .centar h1 span:nth-child(2){
-      color: #efeeee;
-      transform: translate(-50%,-50%) skewX(-60deg);
-      left: -48px;
-      clip-path: polygon(0 45%,100% 45%,100% 55%,0 55%);
-  }
-  .centar h1 span:nth-child(3){
-      color: #efeeee;
-      transform: translate(-50%,-50%) skewX(0deg);
-     left: -95px;
-      clip-path: polygon(0 55%,100% 55%,100% 100%,0 100%);
-  }
-  
-  .bClass{
-    padding: 0;
-    margin: 0;
-    background: #000;
-    box-sizing: content-box !important;
-    font-family: sans-serif;
-    overflow: hidden;
-  }

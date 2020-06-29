@@ -2,13 +2,60 @@
 @model RIIEdition.Pages.UserPages.ConfirmEmailModel
 @{
 }
+
+<head>
+    <link rel="stylesheet" href="~/css/confirm-email.css" />
+    <style>
+        .jumbotron {
+            opacity: 1;
+        }
+
+        .jumbotron1 {
+            opacity: 0.5;
+        }
+
+        .jumbotron2 {
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
 <body>
-  <partial name="_HeaderPartial" />
+    <partial name="_HeaderPartial" />
     <div class="container">
-        <main role="main" >
-           <h1 class="text-black-50">Molimo potvrdite email</h1>
+        <main role="main">
+            <div class="container h-100">
+                <div class="row align-items-left h-100">
+                    <div class="col-6 ml-auto">
+                        <div class="jumbotron jumbotron1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 ml-auto">
+                        <div class="jumbotron text-center">
+                            <img src="~/AppPictures/email.png" class="rounded mx-auto d-block mb-1" alt="...">
+                            <h3 class="mt-2">Potvrda email adrese</h3>
+                            Poslat je email zarad potvrde validnosti Vase email adrese. Nakon dobijanja email-a pratite
+                            link kako bi ste dovršili registraciju.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container h-100">
+                <div class="row align-items-center h-100">
+                    <div class="col-6 ml-auto">
+                        <div class="jumbotron jumbotron2">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
-<partial name="_ScriptsPartial" />
+    <partial name="_ScriptsPartial" />
 
 </body>

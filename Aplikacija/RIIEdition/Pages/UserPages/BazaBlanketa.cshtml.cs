@@ -11,25 +11,30 @@ namespace RIIEdition.Pages.UserPages
 {
     public class BazaBlanketaModel : PageModel
     {
-         private readonly RIIDBContext db;
+        private readonly RIIDBContext db;
         private readonly UserManager<User> userManager;
         private readonly SignInManager<User> signInManager;
 
-        [BindProperty(SupportsGet=true)]
-        public IList<MaterijalData> MaterijalData{get;set;}
-        
-          public BazaBlanketaModel(RIIDBContext db,UserManager<User> userManager,SignInManager<User> signInManager)
+        [BindProperty(SupportsGet = true)]
+        public User MyUser { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public IList<MaterijalData> MaterijalData { get; set; }
+
+        public BazaBlanketaModel(RIIDBContext db, UserManager<User> userManager, SignInManager<User> signInManager)
         {
             this.db = db;
-           
+
             this.signInManager = signInManager;
-          
+
             this.userManager = userManager;
+
         }
-        public void OnGet()
+        public async Task OnGetAsync()
         {
+            MyUser = await userManager.FindByNameAsync(User.Identity.Name);
             //Samo je potrebno da se ubaci za odredjenog usera
-            MaterijalData=db.MaterijalData.ToList();
+            MaterijalData = db.MaterijalData.ToList();
         }
 
     }

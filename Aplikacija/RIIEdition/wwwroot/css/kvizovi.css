@@ -1,140 +1,127 @@
-
-html,body{
-    height: 100% !important;
-    width: 100%;
-    
-   
+html,
+body {
+  height: 100% !important;
+  width: 100%;
 }
-.link{
-    
+.link {
 }
-body{
-    
+body {
 }
-.rightHalf img:hover,.leftHalf img:hover{
-    filter: blur(5px);
-    cursor: pointer;
+.rightHalf img:hover,
+.leftHalf img:hover {
+  filter: blur(5px);
+  cursor: pointer;
 }
 
-
-.leftHalf{
-   
-    font-weight: bold;
-    font-size: xx-large;
-    background-repeat:no-repeat;
-  background-size:contain;
+.leftHalf {
+  font-weight: bold;
+  font-size: xx-large;
+  background-repeat: no-repeat;
+  background-size: contain;
   image-rendering: pixelated;
-    width: 50%;
-    position: absolute;
-    left: 0px;
-    height:100% !important;
-    display: none;
+  width: 50%;
+  position: absolute;
+  left: 0px;
+  height: 100% !important;
+  display: none;
 }
-.rightHalf img,.leftHalf img{
-    width: 100%;
-    height: 100%;
-  
+.rightHalf img,
+.leftHalf img {
+  width: 100%;
+  height: 100%;
 }
-span:hover{
-    cursor: pointer;
-    background-color: gray;
+span:hover {
+  cursor: pointer;
+  background-color: gray;
 }
-.rightHalf{
-   
-    
-    display: none;
-    font-weight: bold;
-    font-size: xx-large;
-    width: 50%;
-    position: absolute;
-    right: 0px;
-    height:100% !important;
+.rightHalf {
+  display: none;
+  font-weight: bold;
+  font-size: xx-large;
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  height: 100% !important;
 }
 
-.skriveno{
-    
+.skriveno {
 }
-.bodyClass{
-    margin: 0;
-    padding: 0;
-    background: #708d00;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.bodyClass {
+  margin: 0;
+  padding: 0;
+  background: #708d00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.karta{
-    width: 240px;
-    height: 320px;
-    background: #ffffff;
-    transform-style: preserve-3d;
-    box-shadow: inset 300px 0px 50px rgba(0, 0, 0, 0.5),0 20px 100px rgba(0, 0, 0, 0.5);
-    transform: perspective(2000px);
-    transition: 1s;
-    position: relative;
-    outline: 1px solid transparent;
-   }
-   .karta:hover{
-       transform: perspective(2000px) rotate(-10deg);
-       box-shadow: inset 20px 0px 50px rgba(0, 0, 0, 0.5),0 10px 100px rgba(0, 0, 0, 0.5);
-   }
-   .karta::before{
-       content: '';
-       position: absolute;
-       top: -5px;
-       left: 0;
-       width: 100%;
-       height: 5px;
-       background: #475b02;
-       transform: skewX(-45deg);
-       transform-origin: bottom;
-       outline: 1px solid transparent;
-   }
-   .karta::after{
-       content: '';
-       position: absolute;
-       top: 0px;
-       right:-5px;
-       width: 5px;
-       height:100%;
-       background: #475b02;
-       transform: skewY(-45deg);
-       transform-origin: left;
-       outline: 1px solid transparent;
-   
-   }
-   .imgBox{
-       width: 100%;
-       height: 100%;
-       outline: 1px solid transparent;
-   }
-   .imgBox img{
-       width: 100%;
-       height: 100%;
-       position: relative;
-       transform-origin: left;
-       transition: 1s;
-       outline: 1px solid transparent;
-   }
-   .imgBox:hover img{
-       transform: rotateY(-135deg);
-       
-   }
-   .details{
-       position: absolute;
-       top: 0;
-       left: 0;
-       z-index: -1;
-   }
-   .karta p{
-       text-align: center;
-       font-weight: bold;
-       font-size: 24px;
-   }
-   .karta:hover{
-       cursor: pointer;
-   }
-   
-   
-   
+.karta {
+  width: 240px;
+  height: 320px;
+  background: #ffffff;
+  transform-style: preserve-3d;
+  box-shadow: inset 300px 0px 50px rgba(0, 0, 0, 0.5), 0 20px 100px rgba(0, 0, 0, 0.5);
+  transform: perspective(2000px);
+  transition: 1s;
+  position: relative;
+  outline: 1px solid transparent;
+}
+.karta:hover {
+  transform: perspective(2000px) rotate(-10deg);
+  box-shadow: inset 20px 0px 50px rgba(0, 0, 0, 0.5), 0 10px 100px rgba(0, 0, 0, 0.5);
+}
+.karta::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: #475b02;
+  transform: skewX(-45deg);
+  transform-origin: bottom;
+  outline: 1px solid transparent;
+}
+.karta::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: -5px;
+  width: 5px;
+  height: 100%;
+  background: #475b02;
+  transform: skewY(-45deg);
+  transform-origin: left;
+  outline: 1px solid transparent;
+}
+.imgBox {
+  width: 100%;
+  height: 100%;
+  outline: 1px solid transparent;
+}
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: left;
+  transition: 1s;
+  outline: 1px solid transparent;
+}
+.imgBox:hover img {
+  transform: rotateY(-135deg);
+}
+.details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.karta p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+.karta:hover {
+  cursor: pointer;
+}

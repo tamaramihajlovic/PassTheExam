@@ -230,6 +230,9 @@ namespace RIIEdition.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("DatumZavrsetkaFK")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NazivPredmeta")
                         .HasColumnType("nvarchar(max)");
 
@@ -305,6 +308,9 @@ namespace RIIEdition.Migrations
 
                     b.Property<int>("BrojOsvojenihPoena")
                         .HasColumnType("int");
+
+                    b.Property<string>("DatumZavrsetkaKviza")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Ocena")
                         .HasColumnType("int");

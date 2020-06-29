@@ -1,175 +1,133 @@
-html,body
-{
+html,
+body {
   height: 100%;
   margin: 0;
 }
 
-.register
-{
-    background-image: url(../AppPictures/quizpic.jpg);
-  background-repeat:no-repeat;
-background-size:cover;
-image-rendering: pixelated;
-
+.register {
+  background-image: url(../AppPictures/quizpic.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  image-rendering: pixelated;
 }
-.avatar
-{
+.avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
 }
-.hrar{
+.hrar {
   height: 1px;
-  border-top:1px solid wheat;
+  border-top: 1px solid wheat;
 }
-.hrar1
-{
+.hrar1 {
   height: 1px;
-  border-top:1px solid wheat;
+  border-top: 1px solid wheat;
   margin-left: 5%;
   margin-right: 5%;
- 
 }
-.boja
-{
-  background-color: rgba(0,0,0,0.5);
+.boja {
+  background-color: rgba(0, 0, 0, 0.5);
 }
-.textColor
-{
+.textColor {
   color: black;
 }
-.calendar
-{
-  
-  background-color: rgba(2,2,2,0.7);
-display: none;
-margin-top:20px ;
-border-radius: 3%;
-overflow: hidden;
-width: 60%;
-
-  
+.calendar {
+  background-color: rgba(2, 2, 2, 0.7);
+  display: none;
+  margin-top: 20px;
+  border-radius: 3%;
+  overflow: hidden;
+  width: 60%;
 }
-.calendarDiv
-{display: flex;
+.calendarDiv {
+  display: flex;
   justify-content: space-between;
   font-size: xx-large;
   color: gainsboro;
 }
-.dani
-{
+.dani {
   display: flex;
   justify-content: space-evenly;
   color: gray;
 }
-.daniKolona
-{
+.daniKolona {
   display: flex;
   flex-direction: column;
-  
+
   justify-content: center;
 }
-.gornjiKalendar
-{
-  background-image: linear-gradient(rgb(46, 38, 38),rgb(39, 39, 39));
-padding-bottom: 5px;
-
+.gornjiKalendar {
+  background-image: linear-gradient(rgb(46, 38, 38), rgb(39, 39, 39));
+  padding-bottom: 5px;
 }
-.donjiKalendar
-{
-
+.donjiKalendar {
 }
-.timer{
-
+.timer {
 }
-.clickedDate
-{
+.clickedDate {
   box-sizing: border-box;
 
   outline-style: ridge;
   outline-color: black !important;
-  
 }
-.bgKalendar
-{
+.bgKalendar {
   background-image: url(../AppPictures/background1.png);
-  background-position:bottom;
-  overflow:hidden !important;
+  background-position: bottom;
+  overflow: hidden !important;
 }
-.aktivna
-{
+.aktivna {
   display: block !important;
 }
-.fa-arrow-circle-left:hover,.fa-arrow-circle-right:hover
-{
-  cursor:pointer;
-  
+.fa-arrow-circle-left:hover,
+.fa-arrow-circle-right:hover {
+  cursor: pointer;
 }
-.spanHover:hover
-{
-  background-image: linear-gradient(rgb(112, 106, 106),#ffe);
-  cursor:pointer !important;
+.spanHover:hover {
+  background-image: linear-gradient(rgb(112, 106, 106), #ffe);
+  cursor: pointer !important;
 }
 
-@media only screen and (max-width: 600px)
-{
-  .Modal-content
-  {
+@media only screen and (max-width: 600px) {
+  .Modal-content {
     width: 85% !important;
   }
-  .calendar
-{
- 
-width: 95% !important;
-  
+  .calendar {
+    width: 95% !important;
+  }
 }
-
-
-}
-@media only screen and (max-width: 1000px)
-{
-  .Modal-content
-  {
+@media only screen and (max-width: 1000px) {
+  .Modal-content {
     width: 75% !important;
   }
-.calendar
-{
-  width: 75%;
+  .calendar {
+    width: 75%;
+  }
+  .stavkeDatuma {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display: flex;
+  }
+  .s10 {
+    width: 10%;
+  }
 }
-.stavkeDatuma
-{
-  padding-top: 3px;
-  padding-bottom:3px;
-  display: flex;
-  
-}
-.s10
-{
-  width: 10%;
-}
-
-}
-.gray
-{
+.gray {
   color: gray;
 }
-.trenutniDan{
+.trenutniDan {
   box-sizing: border-box;
 
   outline-style: ridge;
   outline-color: wheat;
-  background-color: blanchedalmond ;
+  background-color: blanchedalmond;
 }
-.selektovanDatum
-{
-
+.selektovanDatum {
 }
-.izabraniDatumi
-{
+.izabraniDatumi {
   box-sizing: border-box;
 }
 /*    */
-.Modal{
+.Modal {
   display: none;
   position: fixed;
   z-index: 1;
@@ -178,28 +136,31 @@ width: 95% !important;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
 }
-@keyframes animatetop
-{
-  from {top:-300px; opacity: 0;}
-  to  {top: 0; opacity: 1;}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
-.Modal-content
-{
+.Modal-content {
   position: relative;
   background-color: #fefefe;
-  margin:5% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   animation-name: animatetop;
   animation-duration: 1s;
 }
-.close
-{
+.close {
   color: #aaa;
   float: right;
   font-size: 28px;

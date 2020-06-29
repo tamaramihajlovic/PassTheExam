@@ -12,6 +12,8 @@ namespace RIIEdition.Data
             public int Tezina{get;set;}
 
             public string NazivPredmeta{get;set;}
+
+            public string DatumZavrsetkaFK{get;set;}
             
             public User User{get;set;}
     }

@@ -17,17 +17,17 @@ namespace RIIEdition.Pages.UserPages
         {
             this.userManager = userManager;
         }
-        [BindProperty(SupportsGet=true)]
-        public string Naziv{get;set;}
-        public async Task<IActionResult> OnGetAsync(string userId,string token,string password)
+        [BindProperty(SupportsGet = true)]
+        public string Naziv { get; set; }
+        public async Task<IActionResult> OnGetAsync(string userId, string token, string password)
         {
-            
-            var user=await userManager.FindByIdAsync(userId);
-            var result=await userManager.ResetPasswordAsync(user,token,password);
-            if(result.Succeeded)
-            Naziv="Uspesno ste promenili sifru";
+
+            var user = await userManager.FindByIdAsync(userId);
+            var result = await userManager.ResetPasswordAsync(user, token, password);
+            if (result.Succeeded)
+                Naziv = "Uspesno ste promenili sifru";
             else
-            Naziv="Doslo je do greske pri menjaju sifre";
+                Naziv = "Doslo je do greske pri menjaju sifre";
             return Page();
         }
 

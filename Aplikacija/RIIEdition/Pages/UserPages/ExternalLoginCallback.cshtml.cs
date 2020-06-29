@@ -21,47 +21,48 @@ namespace RIIEdition.Pages.UserPages
             this.userManager = userManager;
             this.signInManager = signInManager;
         }
-      
-        
+
+
         public async Task<IActionResult> OnGetAsync()
         {
-          
-            var info=await signInManager.GetExternalLoginInfoAsync();
-            if(info==null)
+
+            var info = await signInManager.GetExternalLoginInfoAsync();
+            if (info == null)
             {
-               
-                ModelState.AddModelError("","Error loading external logging information");
+
+                ModelState.AddModelError("", "Error loading external logging information");
                 return RedirectToPage("UserPages/Login");
             }
-            var signInResult=await signInManager.ExternalLoginSignInAsync(info.LoginProvider,info.ProviderKey,
-            isPersistent:false,bypassTwoFactor:true);
-           
+            var signInResult = await signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey,
+            isPersistent: false, bypassTwoFactor: true);
+
             if (signInResult.Succeeded)
             {
-               
-                return  RedirectToPage("/Index");
-            }
-            else{
-           
-  var email=info.Principal.FindFirstValue(ClaimTypes.Email);
-            if(email!=null)
-            {
-               
-                var user=await userManager.FindByEmailAsync(email);
-              
-               await signInManager.SignInAsync(user,isPersistent:false);
-               
+
                 return RedirectToPage("/Index");
             }
+            else
+            {
+
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+                if (email != null)
+                {
+
+                    var user = await userManager.FindByEmailAsync(email);
+
+                    await signInManager.SignInAsync(user, isPersistent: false);
+
+                    return RedirectToPage("/Index");
+                }
 
             }
-           
-            ModelState.AddModelError("","Ne postoji registrovani korisnik sa ovom adresom");
+
+            ModelState.AddModelError("", "Ne postoji registrovani korisnik sa ovom adresom");
             return RedirectToPage("/UserPages/Login");
 
-          
-            
+
+
         }
-        
+
     }
 }

@@ -1,0 +1,297 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+body {
+  background: #020000 !important;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#starterDiv {
+  opacity: 0.8;
+}
+
+#bedzeviId {
+  opacity: 0.8;
+}
+
+.login-register-dropdown-container {
+  display: none;
+}
+
+.prikaz-profilne-slike {
+  width: 260px;
+  height: 260px;
+}
+
+.img-fluid {
+  max-width: 75%;
+}
+
+.profil-page-body {
+  background: #fafafa;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+  line-height: 1.7em;
+  color: #999;
+}
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 0px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  perspective: 1500px;
+}
+
+/*Sidebar*/
+
+.background-transparent-90 {
+  opacity: 0.9;
+}
+
+#sidebar {
+  min-width: 250px;
+  max-width: 250px;
+  background: rgb(71, 72, 80);
+  color: #fff;
+  transition: all 0.6s cubic-bezier(0.945, 0.02, 0.27, 0.665);
+  transform-origin: bottom left;
+}
+
+.sidebar-user {
+  padding: 2.5rem 2rem 2rem;
+  color: #626264;
+  background-color: rgb(71, 72, 80);
+  opacity: 1;
+  text-align: center;
+}
+
+#sidebar.active {
+  margin-left: -250px;
+  transform: rotateY(100deg);
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: #626264;
+}
+
+#sidebar ul.components {
+  padding: 20px 0;
+  border-bottom: 1px solid #626264;
+}
+
+#sidebar ul p {
+  color: #fff;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  color: #626264;
+  background: #fff;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #fff;
+  background: #626264;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  padding-left: 30px !important;
+  background: #626264;
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.sidebar-btn-logout {
+  width: 100% !important;
+}
+
+a.article,
+a.article:hover {
+  background: #626264 !important;
+  color: #fff !important;
+}
+
+/*Sadrzaj*/
+
+#content {
+  width: 100%;
+  padding: 20px;
+  min-height: 100vh;
+  transition: all 0.3s;
+}
+
+#sidebarCollapse {
+  width: 40px;
+  height: 40px;
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+#sidebarCollapse span {
+  width: 80%;
+  height: 2px;
+  margin: 0 auto;
+  display: block;
+  background: #555;
+  transition: all 0.8s cubic-bezier(0.81, -0.33, 0.345, 1.375);
+  transition-delay: 0.2s;
+}
+
+#sidebarCollapse span:first-of-type {
+  transform: rotate(45deg) translate(2px, 2px);
+}
+
+#sidebarCollapse span:nth-of-type(2) {
+  opacity: 0;
+}
+
+#sidebarCollapse span:last-of-type {
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+#sidebarCollapse.active span {
+  transform: none;
+  opacity: 1;
+  margin: 5px auto;
+}
+
+#profilePictureBodyFileSystemLab {
+  margin-bottom: 0px;
+}
+
+#graph-manipulation3 {
+  margin-bottom: 0px !important;
+}
+
+@media (max-width: 768px) {
+  .col-sm-10 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .col-m-9 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .navbar-nav {
+    margin-left: 40px;
+  }
+  .input-active {
+    width: 100%;
+  }
+  .container-input-izmena-profila.w-50 {
+    width: 100% !important;
+  }
+  #sidebar {
+    margin-left: -250px;
+    transform: rotateY(90deg);
+  }
+  #sidebar.active {
+    margin-left: 0;
+    transform: none;
+  }
+  #sidebarCollapse span:first-of-type,
+  #sidebarCollapse span:nth-of-type(2),
+  #sidebarCollapse span:last-of-type {
+    transform: none;
+    opacity: 1;
+    margin: 5px auto;
+  }
+  #sidebarCollapse.active span {
+    margin: 0 auto;
+  }
+  #sidebarCollapse.active span:first-of-type {
+    transform: rotate(45deg) translate(2px, 2px);
+  }
+  #sidebarCollapse.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+  #sidebarCollapse.active span:last-of-type {
+    transform: rotate(-45deg) translate(1px, -1px);
+  }
+  #profilePictureBodyFileSystemLab {
+    margin-bottom: 0px;
+  }
+}

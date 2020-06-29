@@ -1,70 +1,1215 @@
 ﻿@page
 @model RIIEdition.Pages.UserPages.ProfilPageModel
 @{
-
+string src1="/AppPictures/no_image.gif";
 }
+
+<head>
+    <link rel="stylesheet" href="~/css/UserPages/ProfilePage.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+</head>
+
 <body>
-  <partial name="_HeaderPartial" />
-    <div class="container">
-        <main role="main" >
-        <div class="card" style="width: 30%;">
-    <img src="~/AppPictures/no_image.gif" style="width: fit-content;" class="card-img-top" />
-    <div class="card-header">
-         @if(Model.MyUser.PictureFilePath==null)
-            {
-                  <a class="btn btn-primary" href="#">
-           Dodaj profilnu sliku
-            </a>
-            }
-            else
-            {
-                 <a class="btn btn-primary" href="#">
-           Izmeni profilnu sliku
-            </a>
-            }
-       </div>
-    <div class="card-body">
-         <form method="post">
-        <div class="form-group card-title row"><label asp-for="MyUser.UserName">
-        </label>
-        <input asp-for="MyUser.UserName" class="form-control" disabled />
-        </div>
-          <div class="form-group  row"><label asp-for="MyUser.Name">
-        </label>
-        <input asp-for="MyUser.Name" class="form-control" disabled />
-        </div>
-         
+    <partial name="_HeaderPartial" />
+    <div class="container-fluid profil-page-body" id="profil-page-body">
+        <main role="main">
+            <!--Audio-->
+            <audio id="audio1" controls style="display:none">
+                <source src="~/AppSounds/audioclip-1588773425-290.mp4" type="audio/mpeg"> Your browser does not support
+                the audio element.
+            </audio>
+            <audio id="audio2" controls style="display:none">
+                <source src="~/AppSounds/audioclip-1588773431-269.mp4" type="audio/mpeg"> Your browser does not support
+                the audio element.
+            </audio>
+            <div class="wrapper">
+                <nav class="background-transparent-90" id="sidebar">
+                    <!-- Sidebar -->
+                    <div class="sidebar-header">
+                        <div class="sidebar-user bg-secondary rounded">
+                            <!--
+                                <img src="~/UserPictures/58570869_1034852310047479_8023942775235936256_n.jpg" class="img-fluid rounded-circle mb-2" alt="@Model.MyUser.Name @Model.MyUser.LastName">
+				            	-->
+                            <div class="container-fluid">
+                                @if(Model.MyUser.PictureFilePath==null)
+                                {
+                                <img src="@src1" class="img-raised rounded-circle mx-auto img-thumbnail mt-4"
+                                    class="img-fluid rounded-circle mb-2"
+                                    alt="@Model.MyUser.Name @Model.MyUser.LastName">
+                                }
+                                else
+                                {
+                                <img src="@Model.MyUser.PictureFilePath.Substring(Model.MyUser.PictureFilePath.IndexOf('/'))"
+                                    class="img-fluid rounded-circle mb-2"
+                                    alt="@Model.MyUser.Name @Model.MyUser.LastName">
+                                }
+                                <!--Zavrsavanje slike naseg u avatara-->
+                            </div>
+                            <div class="font-weight-bold text-white">@Model.MyUser.Name @Model.MyUser.LastName</div>
+                        </div>
+                        <ul class="list-unstyled components">
+                            <p>Profile navigation</p>
+                            <li class="active">
+                                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                    class="dropdown-toggle" class="h5">Upravljanje profilom</a>
+                                <ul class="collapse list-unstyled" id="homeSubmenu">
+                                    <li>
+                                        <a href="#" onclick="javascript:showPregledProfila()">Pregled profila</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="javascript:showIzmenaProfila()">Izmena profila</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                                    class="dropdown-toggle">Aktivnosti</a>
+                                <ul class="collapse list-unstyled" id="pageSubmenu">
+                                    <li>
+                                        <a href="#" onclick="javascript:showFlashKartice()">Fleš kartice</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" onclick="javascript:showKvizovi()">Kvizovi</a>
+                                    </li>
+                                    <li>
+                                        <!--/UserPages/Calendar-->
+                                        <a href="#" onclick="javascript:showKalendar()">Kalendar</a>
+                                    </li>
+                                </ul>
+                            </li>
 
-          </form>
+                            <li>
+                                <a href="#" onclick="javascript:showFavorites()">Favoriti</a>
+                            </li>
+
+                            <li>
+                                <a href="#" onclick="javascript:showGrafikoni()">Grafikoni</a>
+                            </li>
+                            <li>
+                                <a href="#" onclick="javascript:showPodesavanjaProfila()">Podešavanja profila</a>
+                            </li>
+                        </ul>
+                        <form class="dropdown-item border-top" method="post">
+                            <button class="nav-link btn btn-link text-white sidebar-btn-logout"
+                                asp-page="/UserPages/Logout">
+                                Logout
+                            </button>
+                        </form>
+                </nav>
+                <!-- Sadrzaj -->
+                <div id="content">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <div class="container-fluid">
+
+                            <button type="button" id="sidebarCollapse" class="navbar-btn">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                            <ul class="nav navbar-nav ml-auto">
+                                <li class="nav-item active" id="lab-pregled-profila" style="display: block;">
+                                    <a class="lab-pregled-profila" href="#">Pregled profila</a>
+                                </li>
+                                <li class="nav-item active" id="lab-izmena-profila" style="display: none;">
+                                    <a class="lab-izmena-profila" href="#">Izmena profila</a>
+                                </li>
+                                <li class="nav-item active" id="lab-fles-kartice-profila" style="display: none;">
+                                    <a class="lab-fles-kartice-profila" href="#">Fleš kartice</a>
+                                </li>
+                                <li class="nav-item active" id="lab-kvizovi-profila" style="display: none;">
+                                    <a class="lab-kvizovi-profila" href="#">Kvizovi</a>
+                                </li>
+                                <li class="nav-item active" id="lab-planiranje-profila" style="display: none;">
+                                    <a class="lab-planiranje-profila" href="#">Planiranje</a>
+                                </li>
+                                <li class="nav-item active" id="lab-favorites-profila" style="display: none;">
+                                    <a class="lab-favorites-profila" href="#">Favorites</a>
+                                </li>
+                                <li class="nav-item active" id="lab-grafikoni-profila" style="display: none;">
+                                    <a class="lab-grafikoni-profila" href="#">Grafikoni</a>
+                                </li>
+                                <li class="nav-item active" id="lab-podesavanje-profila" style="display: none;">
+                                    <a class="lab-podesavanje-profila" href="#">Podešavanje profila</a>
+                                </li>
+                            </ul>
+                            <button id="button-with-animation" class="btn btn-dark d-inline-block d-lg-none ml-auto"
+                                type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="fas fa-align-justify"></i>
+                            </button>
+
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="nav navbar-nav ml-auto">
+                                    <li class="nav-item active" id="liPrikaziSakrijProfilnuSliku"
+                                        style="display: block;">
+                                        <a class="nav-link" href="#"
+                                            onclick="javascript:showProfilnaSlikaPregled()">Prikazi/Sakrij: Profilnu
+                                            sliku i bedzeve</a>
+                                    </li>
+                                    <li class="nav-item active" id="liStatistikuKvizova" style="display: none;">
+                                        <a class="nav-link" href="#"
+                                            onclick="javascript:showStatistikuKvizova()">Prikazi/Sakrij: Statistiku
+                                            kvizova</a>
+                                    </li>
+                                    <li class="nav-item active" id="liStatistikuFlesKartica" style="display: none;">
+                                        <a class="nav-link" href="#"
+                                            onclick="javascript:showStatistikuFlesKartica()">Prikazi/Sakrij: Statistiku
+                                            fleš kartica</a>
+                                    </li>
+                                    <li class="nav-item active" id="liTogglePodesavanjeBojeGrafovaContainer"
+                                        style="display: none;">
+                                        <a class="nav-link" href="#"
+                                            onclick="javascript:togglePodesavanjeBojeGrafovaContainer()">Prikazi/Sakrij:
+                                            Detaljna podešavanja boja grafova</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                    <div id="starterDiv" class="container mt-5">
+                        <div class="container">
+                            <div class="container-fluid bg-white rounded">
+                                <div class="col-sm-12 text-center">
+                                    <h1 id="dobrodosli" class="bg-white text-secondary"
+                                        style="font-family:Book Antiqua;">
+                                        <div class="col-sm-12" style="visibility: hidden;">
+                                            Another hidden element :3
+                                        </div>
+                                        Dobrodošli: <span class="text-primary">@Model.MyUser.UserName</span>
+                                    </h1>
+                                </div>
+                                <div class="col-sm-12 text-center" style="">
+                                    <img class="img-fluid" id="welcomeImg" style=""
+                                        src="~/AppPictures/RIIEditionLogo.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="div-pregled-profila">
+                        <div class="mt-2  rounded col-md p-3">
+                            <div id="div-profilna-slika-pregled" class="container p-2 rounded mb-4"
+                                style="display: block;">
+                                <div class="row">
+                                    <div class="col-sm-2">
+
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="container-fluid text-center">
+                                            @if(Model.MyUser.PictureFilePath==null)
+                                            {
+                                            <img src="@src1"
+                                                class="img-raised rounded-circle mx-auto img-thumbnail mt-4"
+                                                class="img-fluid rounded-circle mb-2"
+                                                alt="@Model.MyUser.Name @Model.MyUser.LastName">
+                                            }
+                                            else
+                                            {
+                                            <img src="@Model.MyUser.PictureFilePath.Substring(Model.MyUser.PictureFilePath.IndexOf('/'))"
+                                                class="img-raised rounded-circle mx-auto img-thumbnail mt-4"
+                                                class="img-fluid rounded-circle mb-2"
+                                                alt="@Model.MyUser.Name @Model.MyUser.LastName">
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-2">
+                                        <div class="div-sm-12" style="visibility: hidden;">Lets see if anyone ever finds
+                                            about this hidden text :3</div>
+                                    </div>
+                                    <div class="col-sm-5 bg-white rounded text-center text-secondary" id="bedzeviId">
+                                        @if(await Model.isAdmin(Model.MyUser))
+                                        {
+                                        <div clas="col-sm-12 p-2">
+                                            <span style="display: block;" class="admin mt-2 mb-2">Uloga: admin</span>
+                                        </div>
+                                        }
+                                        @if(await Model.isProfessor(Model.MyUser))
+                                        {
+                                        <div clas="col-sm-12 p-2">
+                                            <span style="display: block;" class="professor mt-2 mb-2">Uloga:
+                                                profesor</span>
+                                        </div>
+                                        }else{
+                                        <div clas="col-sm-12 p-2">
+                                            <span style="display: block;" class="user mt-2 mb-2">Uloga: regularni
+                                                član</span>
+                                        </div>
+                                        }
+                                        <div class="row">
+                                            <div class="col-sm-2">
+
+                                            </div>
+                                            <div class="col-sm-8" id="bedgeId">
+                                                <img id=bedgeImgId src="/AppPictures/Bedzevi/sampion.jpg"
+                                                    class="img-fluid" alt="Responsive image">
+                                            </div>
+                                            <div class="col-sm-2">
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 text-center" id="brojKvizova"></div>
+                                        <div class="col-sm-12 text-center text-danger" id="rank" style="display: none;">
+                                            Hall of fame ranking: 1 🥇</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <form enctype="multipart/form-data">
+
+                                <div class="form-row p-2">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-2 mt-2">
+                                                            <label class="text-white">Ime: </label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <label class="form-control text-center"
+                                                                placeholder="Ime...">@Model.MyUser.Name</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-2 mt-2">
+                                                            <label class="text-white">Prezime: </label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <label class="form-control text-center"
+                                                                placeholder="Prezime...">@Model.MyUser.LastName</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container p-2">
+                                    <div class="row">
+                                        <div class="col-sm-3 mt-2">
+                                            <label class="text-white ml-2">Koriničko ime: </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <label class="form-control text-center"
+                                                placeholder="Korisničko ime...">@Model.MyUser.UserName</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container p-2">
+                                    <div class="row">
+                                        <div class="col-sm-3 mt-2">
+                                            <label class="text-white ml-2">Email: </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <label class="form-control text-center"
+                                                placeholder="Email...">@Model.MyUser.Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container p-2">
+                                    <div class="row">
+                                        <div class="col-sm-3 mt-2">
+                                            <label class="text-white ml-2">Godina rođenja: </label>
+                                        </div>
+                                        <div class="col-sm-9">
+                                            <label class="form-control text-center mr-2"
+                                                placeholder="Godina rođenja...">@Model.MyUser.YearOfBirth</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-row p-2">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-sm">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-2 mt-2">
+                                                            <label class="text-white">Pol: </label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            @if(Model.MyUser.Gender == 'M')
+                                                            {
+                                                            <label class="form-control text-center"
+                                                                placeholder="Pol...">Muški</label>
+                                                            }
+                                                            else
+                                                            {
+                                                            <label class="form-control text-center"
+                                                                placeholder="Pol...">Ženski</label>
+                                                            }
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm">
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-2 mt-2">
+                                                            <label class="text-white">Grad: </label>
+                                                        </div>
+                                                        <div class="col-sm-10">
+                                                            <label class="form-control text-center"
+                                                                placeholder="Grad...">@Model.MyUser.City</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="container p-2">
+                                    <div class="row">
+                                        <div class="col-sm">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-sm-2 mt-2">
+                                                        <label class="text-white">Indeks: </label>
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control text-center"
+                                                            placeholder="Index...">@Model.MyUser.Index</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-sm-2">
+                                                        <label class="text-white">Godina studija: </label>
+                                                    </div>
+                                                    <div class="col-sm-10">
+                                                        <label class="form-control text-center"
+                                                            placeholder="Godina studija...">@Model.MyUser.YearOfStudy</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                    <!--Izmena profila-->
+                    <!--here-->
+                    <div id="div-izmena-profila" style="display: none;">
+                        <div class="container bg-white mt-2  rounded col-md p-3 text-center">
+                            Ovde možete izmeniti Vaš korisnički profil po želji.
+                        </div>
+                        <div class="mt-2  rounded col-md boja p-3">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <form enctype="multipart/form-data" method="post">
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <input asp-for="@Model.MyUser.Name" class="form-control  "
+                                            placeholder="Ime..." />
+                                        <span asp-validation-for="@Model.MyUser.Name" class="text-danger "></span>
+                                    </div>
+                                    <div class="form-group col">
+                                        <input asp-for="@Model.MyUser.LastName" class="form-control "
+                                            placeholder="Prezime..." />
+                                        <span asp-validation-for="@Model.MyUser.LastName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <label asp-for="@Model.MyUser.YearOfBirth" class="text-white"></label>
+                                    <input asp-for="@Model.MyUser.YearOfBirth" class="form-control "
+                                        placeholder="Godina rodjenja..." />
+                                    <span asp-validation-for="@Model.MyUser.YearOfBirth" class="text-danger"></span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col mt-2">
+                                        <span class="text-white">Pol:</span>
+                                        <label class="ml-3 mr-3 text-white">Muški</label>
+                                        <input type="radio" asp-for="@Model.MyUser.Gender" value="M" checked />
+                                        <label class="ml-3 mr-3 text-white">Ženski</label>
+                                        <input type="radio" asp-for="@Model.MyUser.Gender" value="Z" />
+                                    </div>
+                                    <div class="form-group col">
+                                        <input asp-for="@Model.MyUser.City" class="form-control "
+                                            placeholder="Grad..." />
+                                        <span asp-validation-for="@Model.MyUser.City" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label asp-for="@Model.MyUser.Index" class="text-white"></label>
+                                        <input asp-for="@Model.MyUser.Index" class="form-control "
+                                            placeholder="Index..." />
+                                        <span asp-validation-for="@Model.MyUser.Index" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col">
+                                        <label asp-for="@Model.MyUser.YearOfStudy" class="text-white"></label>
+                                        <input asp-for="@Model.MyUser.YearOfStudy" class="form-control "
+                                            placeholder="Godina studiranja..." />
+                                        <span asp-validation-for="@Model.MyUser.YearOfStudy" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <input asp-for="@Model.MyUser.Email" class="form-control "
+                                            placeholder="Email..." />
+                                        <span asp-validation-for="@Model.MyUser.Email" class="text-danger"></span>
+                                    </div>
+                                    <div class="form-group col">
+                                        <input asp-for="@Model.MyUser.UserName" class="form-control "
+                                            placeholder="Korisnicko ime..." />
+                                        <span asp-validation-for="@Model.MyUser.UserName" class="text-danger "></span>
+                                    </div>
+                                </div>
+                                <div class="form-group ">
+                                    <div class="custom-file ">
+                                        <input asp-for="Photo" class="form-control  custom-file-input " />
+                                        <label asp-for="Photo" class="custom-file-label ">Izaberite sliku...</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-secondary">Sacuvaj izmene</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!---->
+                    <!--Activnosti-->
+                    <!--flash kartice-->
+                    <div id="div-flash-kartice" style="display: none;">
+                        <div class="container bg-white mt-2 rounded col-md p-3 text-center">
+                            Ovde su prikazane sve fleš kartice koje ste dosad odigrali.
+                        </div>
+                        <div class="rounded">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid bg-white rounded mt-5">
+                                <div class="col-sm-12">
+                                    <br>
+                                    <table id="tableF" class="table table-striped table-hover table-bordered">
+                                        <thead id="tableFHead">
+
+                                        </thead>
+                                        <tbody id="tableFBody">
+
+                                        </tbody>
+                                    </table>
+                                    <ul id="brojOsvojenihPoenaFKId">
+                                    </ul>
+                                    <ul id="datumiFKId">
+                                    </ul>
+                                    <ul id="predmetiFKId">
+                                    </ul>
+                                    @foreach(var item in Model.FlashCardData) {
+                                    <script>
+                                        var li = document.createElement("li");
+                                        var ul = document.getElementById("brojOsvojenihPoenaFKId");
+                                        li.innerHTML = "@item.Opis";
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                        li = document.createElement("li");
+                                        ul = document.getElementById("datumiFKId");
+                                        li.innerHTML = "@item.DatumZavrsetkaFK";
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                        li = document.createElement("li");
+                                        ul = document.getElementById("predmetiFKId");
+                                        li.innerHTML = "@item.NazivPredmeta";
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                    </script>
+                                    }
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Kvizovi-->
+                    <div id="div-kvizovi" style="display: none;">
+                        <div class="container bg-white mt-2  rounded col-md p-3 text-center">
+                            <div class="col-sm-12">
+                                Ovde su prikazani svi kvizovi koje ste dosad odigrali.
+                            </div>
+                            <div class="col-sm-12">
+                                Ukoliko želite videti globalno stanje otvorite naredni link:
+                            </div>
+                            <div class="col-sm-12">
+                                <a href="/UserPages/HallOfFame" class="stretched-link text-primary hoverable"
+                                    data-toggle="tooltip">Hall of fame</a>
+                            </div>
+                        </div>
+                        <div class="rounded">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid bg-white rounded mt-5">
+                                <div class="col-sm-12">
+                                    <br>
+                                    <table id="tableK" class="table table-striped table-hover table-bordered">
+                                        <thead id="tableKHead">
+
+                                        </thead>
+                                        <tbody id="tableKBody">
+
+                                        </tbody>
+                                    </table>
+                                    <ul id="brojOsvojenihPoenaId">
+                                    </ul>
+                                    <ul id="datumiId">
+                                    </ul>
+                                    <ul id="predmetiId">
+                                    </ul>
+                                    @foreach(var item in Model.QuizData) {
+                                    <script>
+                                        var li = document.createElement("li");
+                                        var ul = document.getElementById("brojOsvojenihPoenaId");
+                                        li.innerHTML = @item.BrojOsvojenihPoena;
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                        li = document.createElement("li");
+                                        ul = document.getElementById("datumiId");
+                                        li.innerHTML = "@item.DatumZavrsetkaKviza";
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                        li = document.createElement("li");
+                                        ul = document.getElementById("predmetiId");
+                                        li.innerHTML = "@item.Predmet";
+                                        li.style.display = "none";
+                                        ul.appendChild(li);
+                                    </script>
+                                    }
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Kalendar-->
+                    <div id="div-kalendar" style="display: none;">
+                        <div class="container bg-white mt-2  rounded col-md p-3 text-center">
+                            <div class="container-fluid">
+                                Ovde su prikazane sve Vaše isplanirane obaveze.
+                            </div>
+                            <div class="container-fluid">
+                                <a href="/UserPages/Calendar" class="stretched-link text-primary">Upravljajte
+                                    obavezama</a>
+                            </div>
+                        </div>
+                        <div class="mt-2  rounded col-md p-3">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                    <div class="container-fluid">
+                                        @if(Model.CalendarDatas.Any())
+                                        {
+                                        @foreach (var item in Model.CalendarDatas)
+                                        {
+                                        <div class="card mt-3 mb-3">
+                                            <div class="card-header font-weight-bold">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        <h4 class="text-secondary">Naziv: @item.NazivDogadjaja</h4>
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        <h4 class="text-secondary">Datum: @item.Mesec @item.Dan</h4>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="col-sm-12 ml-5 mb-3">
+                                                    @if(item.opisDogadjaja!=null)
+                                                    {
+                                                    <div> @item.opisDogadjaja</div>
+                                                    }
+                                                    else
+                                                    {
+                                                    <div class="text-secondary">Nije dodat opis za ovaj dogadjaj</div>
+                                                    }
+                                                    @if(item.Pocetak!=null)
+                                                    {
+                                                    <div>Vreme pocetka: @item.Pocetak</div>
+                                                    }
+                                                    @if(item.Zavrestak!=null)
+                                                    {
+                                                    <div>Vreme zavrsetka: @item.Zavrestak</div>
+                                                    }
+                                                    @if(item.CeoDan)
+                                                    {
+                                                    <h7>Dogadjaj traje ceo dan</h7>
+                                                    }
+                                                    else
+                                                    {
+                                                    <h7>Dogadjaj nije celodnevni</h7>
+                                                    }
+                                                </div>
+                                                <div class="card-footer">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        }
+                                        }
+                                        else
+                                        {
+                                        <h3 class="text-secondary text-center">Nemate zadatih obaveza.</h3>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Favorites-->
+                    <div id="div-favorites" style="display: none;">
+                        <div class="container bg-white mt-2  rounded col-md p-3 text-center">
+                            Ovde su prikazani svi Vaši favorizovani materijali.
+                        </div>
+                        <div class="mt-2  rounded col-md p-3">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul id="userDataId">
+                        </ul>
+                        <ul id="name">
+                        </ul>
+                        <ul id="lastName">
+                        </ul>
+                        <ul id="autorUserName">
+                        </ul>
+                        @foreach(var item in Model.UsersData) {
+                        <script>
+                            var li = document.createElement("li");
+                            var ul = document.getElementById("userDataId");
+                            li.innerHTML = "@item.Id";
+                            li.style.display = "none";
+                            ul.appendChild(li);
+                            li = document.createElement("li");
+                            ul = document.getElementById("name");
+                            li.innerHTML = "@item.Name";
+                            li.style.display = "none";
+                            ul.appendChild(li);
+                            li = document.createElement("li");
+                            ul = document.getElementById("lastName");
+                            li.innerHTML = "@item.LastName";
+                            li.style.display = "none";
+                            ul.appendChild(li);
+                            li = document.createElement("li");
+                            ul = document.getElementById("autorUserName");
+                            li.innerHTML = "@item.UserName";
+                            li.style.display = "none";
+                            ul.appendChild(li);
+                        </script>
+                        }
+                        <div class="container bg-white rounded mx-auto mt-3 mb-3" id="messageParent" ;>
+                            <div id="cardMessageId" style="display: none;"></div>
+                            <div class="container mx-auto mt-3 mb-3" id="cards">
+                                <br>
+                                <div id="accordion" class="p-2">
+                                    @foreach(var item in Model.MaterijalData){
+                                    <div class="card shadow-lg p-2 mb-4 bg-white rounded" id="C@(item.Id)"
+                                        style="display: none;">
+                                        <div class="card-header" id="A@(item.Id)">
+                                            <h5 class="mb-0">
+                                                <button id="buttonCardId" class="btn btn-link text-secondary"
+                                                    style="font-family:Book Antiqua;" data-toggle="collapse"
+                                                    data-target="#B@(item.Id)" aria-expanded="true"
+                                                    aria-controls="B@(item.Id)">
+                                                    <em class="h3" id="emIdFavorites@(item.Id)"></em>
+                                                </button>
+                                            </h5>
+                                        </div>
+
+                                        <div id="B@(item.Id)" class="collapse" style="font-family:Book Antiqua;"
+                                            aria-labelledby="A@(item.Id)" data-parent="#accordion">
+                                            <div class="card-body h5" id="cardBodyFavoritesId@(item.Id)">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <ul id="materijalaId">
+                            </ul>
+                            <ul id="nazivMaterijalaId">
+                            </ul>
+                            <ul id="predmetMaterijalaId">
+                            </ul>
+                            <ul id="brojOcenaJedan">
+                            </ul>
+                            <ul id="brojOcenaDva">
+                            </ul>
+                            <ul id="brojOcenaTri">
+                            </ul>
+                            <ul id="brojOcenaCetiri">
+                            </ul>
+                            <ul id="brojOcenaPet">
+                            </ul>
+                            <ul id="usersIdFavorites">
+                            </ul>
+                            @foreach(var item in Model.MaterijalData) {
+                            <script>
+                                var li = document.createElement("li");
+                                var ul = document.getElementById("nazivMaterijalaId");
+                                li.innerHTML = "@item.NazivMaterijala";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("predmetMaterijalaId");
+                                li.innerHTML = "@item.PredmetMaterijala";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("brojOcenaJedan");
+                                li.innerHTML = "@item.brojOcenaJedan";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("brojOcenaDva");
+                                li.innerHTML = "@item.brojOcenaDva";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("brojOcenaTri");
+                                li.innerHTML = "@item.brojOcenaTri";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("brojOcenaCetiri");
+                                li.innerHTML = "@item.brojOcenaCetiri";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("brojOcenaPet");
+                                li.innerHTML = "@item.brojOcenaPet";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("materijalaId");
+                                li.innerHTML = "@item.Id";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                                li = document.createElement("li");
+                                ul = document.getElementById("usersIdFavorites");
+                                li.innerHTML = "@item.User.Id";
+                                li.style.display = "none";
+                                ul.appendChild(li);
+                            </script>
+                            }
+                        </div>
+                    </div>
+                    <!--Grafikoni-->
+                    <div id="div-grafikoni" style="display: none;">
+                        <div class="container bg-white mt-2  rounded col-md p-3 text-center">
+                            Ovde su prikazane Vaše statistike svih fleš kartica i kvizova kojih ste dosad odigrali.
+                        </div>
+                        <div class="mt-2  rounded col-md p-3">
+                            <div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="container-fluid p-2 bg-white rounded" style="opacity:0.75">
+                                <!---->
+
+                                <!--Bar-->
+                                <div class="container-fluid mb-4" id="statistika-kvizova" style="display:block;">
+                                    <div class="container text-center text-secondary mb-4 mt-1">
+                                        <h4>
+                                            Kvizovi
+                                        </h4>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="container">
+                                                <canvas id="barChartK1"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="lineChartK1"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="horisontalChartK1"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="radarChartK1"></canvas>
+                                            </div>
+                                            <h6 class="text-center">Broj osvojenih poena na kvizovima</h6>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="container">
+                                                <canvas id="barChartK2"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="lineChartK2"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="horisontalChartK2"></canvas>
+                                            </div>
+                                            <div class="container">
+                                                <canvas id="radarChartK2"></canvas>
+                                            </div>
+                                            <h6 class="text-center">Broj pokušaja kvizova</h6>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="col-sm-12" id="statistika-fles-kartica">
+                                    <div class="container text-center text-secondary mb-4 mt-1">
+                                        <h4>
+                                            Fleš kartice
+                                        </h4>
+                                    </div>
+                                    <div class="container">
+                                        <canvas id="barChartK3"></canvas>
+                                    </div>
+                                    <div class="container">
+                                        <canvas id="lineChartK3"></canvas>
+                                    </div>
+                                    <div class="container">
+                                        <canvas id="horisontalChartK3"></canvas>
+                                    </div>
+                                    <div class="container">
+                                        <canvas id="radarChartK3"></canvas>
+                                    </div>
+                                    <h6 class="text-center">Broj naucenih pitanja fleš kartica</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Podesavanja profila-->
+                    <div id="div-podesavanja-profila" class="text-secondary" style="display: none; opacity: 0.9;">
+                        <div class="mt-2 bg-white rounded col-md p-3">
+                            <div>
+                                <div class="container">
+                                    <div class="col-sm-12">
+                                        <input style="visibility: hidden;" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-5 ml-1" id="promena-passworda">
+                                <div class="col-sm-12">
+                                    Promenite šifru Vašeg korisničkog profila:
+                                </div>
+                                <div class="col-sm-12">
+                                    <form method="post">
+                                        <button class="btn btn-secondary" type="submit"
+                                            asp-page="/UserPages/UserPasswordChange">Promena šifre</button>
+                                    </form>
+                                </div>
+                                <div class="col-sm-12">
+
+                                </div>
+                            </div>
+                            <div class="col-sm-12 bg-primary text-white rounded" id="podesavanje-grafova">
+                                <h3 class="mt-1">Grafovi:</h3>
+                                <div class="container-fluid mx-auto  mt-4 row bg-info rounded" id="graph-manipulation1">
+                                    <div class="col-sm-6">
+                                        <h6 class="mt-3">Podešavanje kvizova na osnovu broja osvojenih poena:</h6>
+                                    </div>
+                                    <div class="col-sm-6 mt-1">
+                                        <label>
+                                            <button id="tipeBarK1" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK1Bar()" style="display: block;">Bar</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeLineK1" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK1Line()"
+                                                style="display: block;">Line</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeHorisontalK1" class="btn btn-primary"
+                                                href="#podesavanje-grafova" onclick="javascript:showTipK1Horisontal()"
+                                                style="display: block;">Horisontal</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeRadarK1" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK1Radar()"
+                                                style="display: block;">Radar</button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="container-fluid mx-auto row bg-info rounded" id="graph-manipulation2">
+                                    <div class="col-sm-6">
+                                        <h6 class="mt-3">Podešavanje kvizova na osnovu broja pokušaja:</h6>
+                                    </div>
+                                    <div class="col-sm-6 mt-1">
+
+                                        <label>
+                                            <button id="tipeBarK2" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK2Bar()" style="display: block;">Bar</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeLineK2" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK2Line()"
+                                                style="display: block;">Line</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeHorisontalK2" class="btn btn-primary"
+                                                href="#podesavanje-grafova" onclick="javascript:showTipK2Horisontal()"
+                                                style="display: block;">Horisontal</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeRadarK2" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK2Radar()"
+                                                style="display: block;">Radar</button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="container-fluid mx-auto row bg-info rounded" id="graph-manipulation3">
+                                    <div class="col-sm-6">
+                                        <h6 class="mt-3">Podešavanje grafova fleš kartica:</h6>
+                                    </div>
+                                    <div class="col-sm-6 mt-1">
+
+                                        <label>
+                                            <button id="tipeBarK3" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK3Bar()" style="display: block;">Bar</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeLineK3" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK3Line()"
+                                                style="display: block;">Line</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeHorisontalK3" class="btn btn-primary"
+                                                href="#podesavanje-grafova" onclick="javascript:showTipK3Horisontal()"
+                                                style="display: block;">Horisontal</button>
+                                        </label>
+                                        <label>
+                                            <button id="tipeRadarK3" class="btn btn-primary" href="#podesavanje-grafova"
+                                                onclick="javascript:showTipK3Radar()"
+                                                style="display: block;">Radar</button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="container-fluid mx-auto row bg-primary rounded-bottom">
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mt-5" id="podesavanje-boje-grafova-container">
+                                <h3 class="mb-3 ml-3 mt-2">Detaljna podešavanja boja grafova:</h3>
+                                <div class="row">
+                                    <div class="col-sm-6 mt-2" id="podesavanje-boje-grafova">
+                                        <div class="col-sm-12">
+                                            <h3 class="text-secondary">Grafovi kvizova:</h3>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-6 mt-2" id="podesavanje-boje-grafova-FK">
+                                        <div class="col-sm-12">
+                                            <h3 class="text-secondary">Grafovi fleš kartica:</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mt-5" id="random-graph-color-picker">
+                                <div class="row">
+                                    <div class="col-sm-11">
+                                        Štiklirajte ukoliko želite tamne boje, u suprotnom će biti svetle:
+                                    </div>
+                                    <div class="col-sm-1">
+                                        <div class="form-check">
+                                            <input id="dark-light-check" class="form-check-input position-static"
+                                                type="checkbox" id="blankCheckbox" value="option1" aria-label="..."
+                                                checked>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-secondary" onclick="javascript:fillGraphsWithRandomColors()">
+                                    Popunite stubove grafova random bojama
+                                </button>
+                                <button class="btn btn-secondary" onclick="javascript:reloadPage()">
+                                    Sačuvaj detaljano odabrane boje
+                                </button>
+                            </div>
+                            <div class="col-sm-12 mt-5 text-white bg-primary rounded"
+                                id="profilPageBodyBackgroundChange">
+                                <div class="row">
+                                    <div class="container-fluid">
+                                        <h3 class="mb-3 ml-4 mt-1">Promena pozadine:</h3>
+                                        <form>
+                                            <div class="form-group mt-2 w-75 ml-4">
+                                                <label for="profilePictureBodyUrlLab">Unesite URL slike:</label>
+                                                <input type="" class="form-control mb-2" id="profilePictureBodyUrl"
+                                                    placeholder="URL...">
+                                                <button type="button" class="btn btn-secondary"
+                                                    id="profilePictureBodyUrlSubmit"
+                                                    onclick="javascript:updateProfilePageBodyPictureURL()"
+                                                    data-toggle="modal" data-target="#save-changes-modal">Postavi
+                                                    sliku</button>
+                                            </div>
+                                            <div class="form-group mt-2 w-75 ml-4">
+                                                <label for="profilePictureBodyFileSystemLab">Pronađite sliku na Vašem
+                                                    računaru:</label>
+                                                <div class="input-group mb-3 mt-2">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input"
+                                                            id="inputGroupFile02" accept=".jpg,.gif,.png">
+                                                        <label class="custom-file-label"
+                                                            for="inputGroupFile02">Odaberite sliku (.jpg, .gif,
+                                                            .png)...</label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-secondary"
+                                                    id="profilePictureBodyUrlSubmitFile"
+                                                    onclick="javascript:updateProfilePageBodyPictureFile()"
+                                                    data-toggle="modal" data-target="#save-changes-modal">Postavi
+                                                    sliku</button>
+                                            </div>
+                                            <div class="form-group mt-2 w-75 ml-4">
+                                                <label for="profilePictureBodyDimensionCheckLab">Proveri dimenzije slike
+                                                    potrebne za trenutn dimenzije ekran:</label>
+                                                <div class="container">
+                                                    <div class="row">
+                                                        <div class="col-sm-4 col-lg-4">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                id="profilePictureBodyUrlSubmit"
+                                                                onclick="javascript:getNeededPictureHeightAndWidth()"
+                                                                data-toggle="modal">Proveri dimenzije:</button>
+                                                        </div>
+                                                        <div class="col-sm-3 col-lg-3">
+                                                            <input class="form-control" id="pictureNeededWidth"
+                                                                type="text" placeholder="Width..." readonly />
+                                                        </div>
+                                                        <div class="col-sm-1 col-lg-1 mt-1 ml-1">
+                                                            x
+                                                        </div>
+                                                        <div class="col-sm-3 col-lg-3">
+                                                            <input class="form-control" id="pictureNeededHeight"
+                                                                type="text" placeholder="Height..." readonly />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12 mt-5 text-secondary bg-white rounded"
+                                id="profilPageBodyBackgroundChange">
+                                <div class="row">
+                                    <div class="container-fluid">
+                                        <h3 class="mb-3 ml-4 mt-1">Favoriti:</h3>
+                                        <div id="myId" style="visibility: hidden;">@Model.MyUser.Id</div>
+                                        <form>
+                                            <div class="form-group mt-2 w-75">
+                                                <div class="col-sm-12">
+                                                    <label for="profilePictureBodyUrlLab">Resetujte listu favorizovanih
+                                                        materijala:</label>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <button type="button" class="btn btn-secondary" id="favorites"
+                                                        data-toggle="modal"
+                                                        data-target="#reset-favorites">Resetuj</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
-    <div class="card-footer">
-       <button class="btn btn-primary" type="submit" 
-      >Izmeni profil</button>
     </div>
 
-</div>
+    <!-- Modal -->
+    <div class="modal fade" id="save-changes-modal" tabindex="-1" role="dialog"
+        aria-labelledby="save-changes-modalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="save-changes-modalLabel">Promena slike</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="save-changes-modal-body">
+                    Želite li sačuvati novu pozadinu? <br>
+                    Potvrdom se promena čuva za naredni pristup profilu.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"
+                        onclick="javascript:undoPictureChange()">Close</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Modal2 -->
+    <div class="modal fade" id="reset-favorites" tabindex="-1" role="dialog" aria-labelledby="save-changes-modal2Label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="save-changes-modal2Label">Resetovanje liste favorita</h5>
+                    <button type="button" class="close" data-dismiss="modal2" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="save-changes-modal2-body">
+                    Želite li resetovati listu favorita? <br>
+                    Potvrdom se briše lista ovog profila. Promena će biti sačuvana pri narednom pristupu profilu.
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal"
+                            onclick="javascript:ocistiListuFavorita()">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" asp-append-version="true"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.18.0/js/mdb.min.js">
+        </script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('[data-toggle="popover"]').popover();
+            });
+            $(document).ready(function() {
+                $('#sidebarCollapse').on('click', function() {
+                    $('#sidebar').toggleClass('active');
+                    $(this).toggleClass('active');
+                });
+            });
+            
+        </script>
         </main>
     </div>
-<partial name="_ScriptsPartial" />
+    <script src="~/js/UserPages/ProfilePage.js" asp-append-version="true"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" asp-append-version="true"></script>
 </body>
-
-

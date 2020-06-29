@@ -10,6 +10,11 @@ namespace RIIEdition.Data
         {
             
         }
+
+        public DbSet<QuizData> QuizData{get;set;}
+
+        public DbSet<FlashCardData> FlashCardData{get;set;}
+        
         public DbSet<CalendarData> CalendarData{get;set;}
 
         public DbSet<MaterijalData> MaterijalData{get;set;}
@@ -18,7 +23,6 @@ namespace RIIEdition.Data
           protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-        
         }
     }
 }

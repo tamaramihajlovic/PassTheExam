@@ -19,7 +19,7 @@ namespace RIIEdition.Pages.UserPages
         }
         public void OnGet()
         {
-           
+
         }
         public async Task<IActionResult> OnPostAsync()
         {

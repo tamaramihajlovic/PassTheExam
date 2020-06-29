@@ -18,47 +18,47 @@ namespace RIIEdition.Pages.UserPages
         {
             this.userManager = userManager;
         }
-         [BindProperty]
+        [BindProperty]
         [Required]
         [DataType(DataType.EmailAddress)]
-        public string Email{get;set;}
+        public string Email { get; set; }
 
         [BindProperty]
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name="Nova sifra")]
-        public string Password{get;set;}
-        
+        [Display(Name = "Nova sifra")]
+        public string Password { get; set; }
+
         [BindProperty]
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name="Potvrdi novu sifra")]
-        public string ConfirmPassword{get;set;}
+        [Display(Name = "Potvrdi novu sifra")]
+        public string ConfirmPassword { get; set; }
 
-        public string Token{get;set;}
+        public string Token { get; set; }
 
-           [BindProperty]
-        public string Error{get;set;}
+        [BindProperty]
+        public string Error { get; set; }
 
         public void OnGet()
         {
         }
-                public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync()
         {
-            if(Password!=ConfirmPassword)
+            if (Password != ConfirmPassword)
             {
-                ModelState.AddModelError("","Passwrods do not match");
+                ModelState.AddModelError("", "Passwrods do not match");
                 return Page();
             }
-            var user=await userManager.FindByEmailAsync(Email);
-            var token=await userManager.GeneratePasswordResetTokenAsync(user);
-            token=System.Web.HttpUtility.UrlEncode(token);
-             var confirmLink=$@"https://localhost:5001/UserPages/ChangePassword?userId={user.Id}&token={token}&password={Password}";
-             var body=$@"<h1>Saljemo vam novu sifru</h1><br />
+            var user = await userManager.FindByEmailAsync(Email);
+            var token = await userManager.GeneratePasswordResetTokenAsync(user);
+            token = System.Web.HttpUtility.UrlEncode(token);
+            var confirmLink = $@"https://localhost:5001/UserPages/ChangePassword?userId={user.Id}&token={token}&password={Password}";
+            var body = $@"<h1>Saljemo vam novu sifru</h1><br />
                     <p>Nadamo se da cete uzivati u nasoj aplikaciji</p><br />
                     <a href={confirmLink}>Molimo kliknite na link da bi ste promenili sifru</a>";
-              await  SendEmail.sendEmail(Email,  body  ,"Menjanje sifre");
-                          return RedirectToPage("/Index");
+            await SendEmail.sendEmail(Email, body, "Menjanje sifre");
+            return RedirectToPage("/Index");
         }
 
     }

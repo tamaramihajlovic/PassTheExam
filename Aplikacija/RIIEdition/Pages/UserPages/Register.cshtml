@@ -4,144 +4,142 @@
 }
 @section css
 {
-      <link rel="stylesheet" href="~/css/login.css" />
+<link rel="stylesheet" href="~/css/login.css" />
 }
+
 <body class="register">
 
-  <partial name="_HeaderPartial" />
+    <partial name="_HeaderPartial" />
 
     <div class="container ">
-        <main role="main" >
+        <main role="main">
             <div class="row">
                 <div class="col-md">
-          <h1 class="text-left text-dark">Postanite jedan od <b>najboljih</b> studenata na smeru Racunarstvo i Informatika
-          Elektronskog fakulteta</h1>
-          <br/>
-          <br/>
-          <br/>
-          <h5 class="text-dark"><b>Nasi korisnici:</b></h5>
-          <hr class="hrar">
-          <b>
-          <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar "/><span class="bg-light">Uspesno polazu sve ispite</span></div>
-     <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar "/><span class="bg-light">Sa lakocom spreme gradivo</span></div>
-        <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar "/><span class="bg-light">Najbolji su u generaciji</span></div>
-        </b>
-        <br/>
-       <h4 class="textColor"><b>Sa znanjem koje steknete mozete raditi u:</b></h4>
-       <br/>
-       <div class="row justify-content-between" style="width: 90%;"><span class="fa fa-whatsapp " style="font-size: x-large;"></span>
-       <span class="fa fa-linkedin " style="font-size: x-large;"></span>
-       <span class="fa fa-facebook " style="font-size: x-large;"></span>
-       <span class="fa fa-google " style="font-size: x-large;"></span>
-       <span class="fa fa-wikipedia-w " style="font-size: x-large;"></span>
-       <span class="fa fa-amazon " style="font-size: x-large;"></span>
-       
-       <span class="fa fa-twitter " style="font-size: x-large;"></span>
-       </div>
-          </div>
-<div class="mt-2  rounded col-md boja p-3">
-<div asp-validation-summary="All" class="text-danger"></div>
-<form enctype="multipart/form-data" method="post">
- <div class="form-row">
-         
-    <div class="form-group col">
-     
-        <input asp-for="Name"  class="form-control  " placeholder="Ime..." />
-    
-        <span asp-validation-for="Name" class="text-danger "></span>
-    </div>
-    <div class="form-group col">
-      
-         <input asp-for="LastName"  class="form-control " placeholder="Prezime..." />
-        <span asp-validation-for="LastName" class="text-danger"></span>
-        
-    </div>
-    </div>
-     
-   
-    <div class="form-group ">
-        <label asp-for="YearOfBirth" class="text-white"></label>
-        <input asp-for="YearOfBirth"   class="form-control " placeholder="Godina rodjenja..."/>
-        <span asp-validation-for="YearOfBirth" class="text-danger"></span>
-    </div>
-    <div class="form-row">
-    <div class="form-group col mt-2">
-       <span class="text-white">Pol:</span>
-        <label  class="ml-3 mr-3 text-white">    M   </label>
-        <input type="radio" asp-for="Gender" value="M" checked />
-        <label class="ml-3 mr-3 text-white">    Z</label>
-         <input type="radio" asp-for="Gender" value="Z" />
-    </div>
-     <div class="form-group col">
-       
-        <input asp-for="City"  class="form-control " placeholder="Grad..."/>
-        <span asp-validation-for="City" class="text-danger"></span>
-    </div>
-    </div>
-    <div class="form-row">
-     <div class="form-group col">
-        <label asp-for="Index" class="text-white"></label>
-        <input asp-for="Index"  class="form-control " placeholder="Index..."/>
-        <span asp-validation-for="Index" class="text-danger"></span>
-    </div>
-     <div class="form-group col">
-        <label asp-for="YearOfStudy" class="text-white"></label>
-        <input asp-for="YearOfStudy"  class="form-control " placeholder="Godina studiranja..."/>
-        <span asp-validation-for="YearOfStudy" class="text-danger"></span>
-    </div>
-    </div>
-    <div class="form-row">
-     <div class="form-group col">
-       
-        <input asp-for="Email" class="form-control " placeholder="Email..."/>
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-    <div class="form-group col">
-          <input asp-for="UserName"  class="form-control " placeholder="Korisnicko ime..."/>
-        <span asp-validation-for="UserName" class="text-danger "></span>
-        
-    </div>
-    </div>
-    <div class="form-group ">
-       
-       <div class="custom-file ">
-        <input asp-for="Photo" class="form-control  custom-file-input " />
-         <label asp-for="Photo" class="custom-file-label ">Izaberite sliku...</label>
-         </div>
-     
+                    <h1 class="text-left text-dark">Postanite jedan od <b>najboljih</b> studenata na smeru Racunarstvo i
+                        Informatika
+                        Elektronskog fakulteta</h1>
+                    <br />
+                    <br />
+                    <br />
+                    <h5 class="text-dark"><b>Nasi korisnici:</b></h5>
+                    <hr class="hrar">
+                    <b>
+                        <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar " /><span
+                                class="bg-light">Uspesno polazu sve ispite</span></div>
+                        <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar " /><span
+                                class="bg-light">Sa lakocom spreme gradivo</span></div>
+                        <div class="text-dark"><img src="/AppPictures/checked.png" class="avatar " /><span
+                                class="bg-light">Najbolji su u generaciji</span></div>
+                    </b>
+                    <br />
+                    <h4 class="textColor"><b>Sa znanjem koje steknete mozete raditi u:</b></h4>
+                    <br />
+                    <div class="row justify-content-between" style="width: 90%;"><span class="fa fa-whatsapp "
+                            style="font-size: x-large;"></span>
+                        <span class="fa fa-linkedin " style="font-size: x-large;"></span>
+                        <span class="fa fa-facebook " style="font-size: x-large;"></span>
+                        <span class="fa fa-google " style="font-size: x-large;"></span>
+                        <span class="fa fa-wikipedia-w " style="font-size: x-large;"></span>
+                        <span class="fa fa-amazon " style="font-size: x-large;"></span>
 
-    </div>
-     <div class="form-group ">
-     
-        <input asp-for="Password" class="form-control " placeholder="Sifra..."/>
-        <span asp-validation-for="Password" class="text-danger"></span>
-    </div>
-     <div class="form-group ">
-      
-        <input asp-for="ConfirmPassword" class="form-control " placeholder="Potvrdi sifru..."/>
-        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-    </div>
-    <span class="text-danger">@Model.SifreNisuJednake</span>
-       <button type="submit" class="btn btn-primary">Registruj se</button>
-   
- 
- 
+                        <span class="fa fa-twitter " style="font-size: x-large;"></span>
+                    </div>
+                </div>
+                <div class="mt-2  rounded col-md boja p-3">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <form enctype="multipart/form-data" method="post">
+                        <div class="form-row">
 
-    
+                            <div class="form-group col">
 
+                                <input asp-for="Name" class="form-control  " placeholder="Ime..." />
 
-</form>
-   </div>
-</div>
+                                <span asp-validation-for="Name" class="text-danger "></span>
+                            </div>
+                            <div class="form-group col">
+
+                                <input asp-for="LastName" class="form-control " placeholder="Prezime..." />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+
+                            </div>
+                        </div>
+
+                        <div class="form-group ">
+                            <label asp-for="YearOfBirth" class="text-white"></label>
+                            <input asp-for="YearOfBirth" class="form-control " placeholder="Godina rodjenja..." />
+                            <span asp-validation-for="YearOfBirth" class="text-danger"></span>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col mt-2">
+                                <span class="text-white">Pol:</span>
+                                <label class="ml-3 mr-3 text-white"> M </label>
+                                <input type="radio" asp-for="Gender" value="M" checked />
+                                <label class="ml-3 mr-3 text-white"> Z</label>
+                                <input type="radio" asp-for="Gender" value="Z" />
+                            </div>
+                            <div class="form-group col">
+
+                                <input asp-for="City" class="form-control " placeholder="Grad..." />
+                                <span asp-validation-for="City" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                <label asp-for="Index" class="text-white"></label>
+                                <input asp-for="Index" class="form-control " placeholder="Index..." />
+                                <span asp-validation-for="Index" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col">
+                                <label asp-for="YearOfStudy" class="text-white"></label>
+                                <input asp-for="YearOfStudy" class="form-control " placeholder="Godina studiranja..." />
+                                <span asp-validation-for="YearOfStudy" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+
+                                <input asp-for="Email" class="form-control " placeholder="Email..." />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+                            <div class="form-group col">
+                                <input asp-for="UserName" class="form-control " placeholder="Korisnicko ime..." />
+                                <span asp-validation-for="UserName" class="text-danger "></span>
+
+                            </div>
+                        </div>
+                        <div class="form-group ">
+
+                            <div class="custom-file ">
+                                <input asp-for="Photo" class="form-control  custom-file-input " />
+                                <label asp-for="Photo" class="custom-file-label ">Izaberite sliku...</label>
+                            </div>
+
+                        </div>
+                        <div class="form-group ">
+
+                            <input asp-for="Password" class="form-control " placeholder="Sifra..." />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group ">
+
+                            <input asp-for="ConfirmPassword" class="form-control " placeholder="Potvrdi sifru..." />
+                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                        </div>
+                        <span class="text-danger">@Model.SifreNisuJednake</span>
+                        <button type="submit" class="btn btn-primary">Registruj se</button>
+
+                    </form>
+                </div>
+            </div>
         </main>
     </div>
-<partial name="_ScriptsPartial" />
+    <partial name="_ScriptsPartial" />
 
 </body>
 
 @section Scripts
 {
-    <script src="~/js/register.js">
-       
-    </script>
+<script src="~/js/register.js">
+
+</script>
 }

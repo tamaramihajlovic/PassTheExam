@@ -1,142 +1,133 @@
-*, *::before, *::after
-{
-    box-sizing: border-box;
-    font-family: Franklin Gothic;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: Franklin Gothic;
 }
 
-:root
-{
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
+:root {
+  --hue-neutral: 200;
+  --hue-wrong: 0;
+  --hue-correct: 145;
 }
 
-body
-{
-    --hue: var(--hue-natural);
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    background-image: url(https://www.lfnetworking.org/wp-content/uploads/sites/55/2017/12/cog_bg_networking.jpg);
+body {
+  --hue: var(--hue-natural);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  background-image: url(https://www.lfnetworking.org/wp-content/uploads/sites/55/2017/12/cog_bg_networking.jpg);
 }
 
-.kontejnerce
-{
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    width: 800px;
-    height: 400px;
-    max-width: 90%;
-    max-height: 70%;
-    padding: 5px;
-    align-items: center;
-    justify-content: center;
+.kontejnerce {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  width: 800px;
+  height: 400px;
+  max-width: 90%;
+  max-height: 70%;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
 }
 
-div 
-{
-    width: 100%;
-    height: 300px;
-}  
-  .card {
-    transition: transform 1s;
-    transform-style: preserve-3d;
-    cursor: pointer;
-  }
-  
-  .front, .back {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    backface-visibility: hidden;
-    color: white;
-  }
-  
-  .front {
-    border: 2px solid black;
-    background-color: rgb(60, 52, 95);
-  }
-  
-  .front:hover {
-    bottom: 2px;
-    left: 2px;
-    box-shadow: 0px 0px 20px 1px #000;
-  }
-  
-  .back {
-    border: 2px solid black;
-    background: rgb(60, 52, 95);
-    transform: rotateY(180deg);
-  }
-  
-  .back:hover {
-    bottom: 2px;
-    right: 2px;
-    box-shadow: 0px 0px 20px 1px #000;
-  }
-
-.nextDiv
-{
-    display: grid;
-    grid-template-columns: repeat(1, auto);
-    max-width: 100%;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
-    padding-top: 2%;
+div {
+  width: 100%;
+  height: 300px;
+}
+.card {
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
-.next-btn
-{
-    background-color: rgb(94, 36, 68);
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 25px;
-    box-shadow: 2px 2px 2px 2px rgb(49, 13, 26);
-    border-radius: 5px;
-    color: white;
+.front,
+.back {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  color: white;
 }
 
-.next-btn:hover
-{
+.front {
+  border: 2px solid black;
+  background-color: rgb(60, 52, 95);
+}
+
+.front:hover {
+  bottom: 2px;
+  left: 2px;
+  box-shadow: 0px 0px 20px 1px #000;
+}
+
+.back {
+  border: 2px solid black;
+  background: rgb(60, 52, 95);
+  transform: rotateY(180deg);
+}
+
+.back:hover {
+  bottom: 2px;
+  right: 2px;
+  box-shadow: 0px 0px 20px 1px #000;
+}
+
+.nextDiv {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  max-width: 100%;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+  padding-top: 2%;
+}
+
+.next-btn {
+  background-color: rgb(94, 36, 68);
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 10px 25px;
+  box-shadow: 2px 2px 2px 2px rgb(49, 13, 26);
+  border-radius: 5px;
+  color: white;
+}
+
+.next-btn:hover {
   box-shadow: 4px 4px 4px 4px rgb(49, 13, 26);
 }
 
-.ocenjivanje
-{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-    padding-top: 2%;
-    width: 100%;
-    height: 100%;
+.ocenjivanje {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin: 20px 0;
+  padding-top: 2%;
+  width: 100%;
+  height: 100%;
 }
 
-#nauceno-btn
-{
+#nauceno-btn {
   --hue: var(--hue-natural);
-    background-color: rgb(8, 26, 65);
-    border-radius: 5px;
-    color: white;
-    outline: none;
-    font-size: 1rem;
-    height: 100%;
+  background-color: rgb(8, 26, 65);
+  border-radius: 5px;
+  color: white;
+  outline: none;
+  font-size: 1rem;
+  height: 100%;
 }
 
-#nauceno-btn:hover
-{
+#nauceno-btn:hover {
   box-shadow: 3px 3px 3px 3px rgb(20, 5, 53);
 }
-a{
+a {
   text-decoration: none;
 }
-.prviElement{
-  
+.prviElement {
 }

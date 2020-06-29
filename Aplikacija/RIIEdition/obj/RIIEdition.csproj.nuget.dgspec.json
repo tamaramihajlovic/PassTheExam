@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj": {}
+    "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj": {
+    "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj",
+        "projectUniqueName": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj",
         "projectName": "RIIEdition",
-        "projectPath": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\RIIEdition.csproj",
-        "packagesPath": "C:\\Users\\Zika\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Zika\\Desktop\\Zivojin\\RIIEdition\\obj\\",
+        "projectPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\RIIEdition.csproj",
+        "packagesPath": "C:\\Users\\Dusan\\.nuget\\packages\\",
+        "outputPath": "D:\\Elektronski_fakultet\\Bitbucket_Repository\\CompositionFinale\\Composition\\RIIEdition\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Zika\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dusan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

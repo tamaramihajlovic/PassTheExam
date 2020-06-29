@@ -1,0 +1,131 @@
+﻿@page
+@model MyApp.Namespace.HallOfFameModel
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/HallOfFame.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" />
+</head>
+
+<body>
+    <partial name="_HeaderPartial" />
+    <div class="container"></div>
+    <div class="col-sm-12 text-center text-white mt-2 mb-4" id="dataId">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-4">
+                <h2 class="bg-secondary rounded mx-auto" style="font-family:Book Antiqua; opacity: 0.90;">Hall of fame
+                </h2>
+            </div>
+            <div class="col-sm-4">
+
+            </div>
+        </div>
+    </div>
+    <div class="row text-center p-4">
+        <div class="col-sm-3">
+
+        </div>
+        <div class="col-sm-3">
+            <label id="labelSelectPredmetId" class="text-white mt-1">Odaberite predmet: </label>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" id="selectPredmetId" onchange="javascript:drawTable(this)">
+                <option>Softversko inženjerstvo</option>
+                <option>Web programiranje</option>
+                <option>Mikroracunarski sistemi</option>
+                <option>Operativni Sistemi</option>
+                <option>Algoritmi i programiranje</option>
+            </select>
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+    </div>
+    <ul id="brojOsvojenihPoenaId">
+    </ul>
+    <ul id="userId">
+    </ul>
+    <ul id="predmetiId">
+    </ul>
+    <ul id="userNameDataId">
+    </ul>
+    @foreach(var item in Model.QuizData) {
+    <script>
+        var li = document.createElement("li");
+        var ul = document.getElementById("brojOsvojenihPoenaId");
+        li.innerHTML = "@item.BrojOsvojenihPoena";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("userId");
+        li.innerHTML = "@item.User.Id";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("predmetiId");
+        li.innerHTML = "@item.Predmet";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("userNameDataId");
+        li.innerHTML = "@item.User";
+        li.style.display = "none";
+        ul.appendChild(li);
+    </script>
+    }
+    <ul id="userDataId">
+    </ul>
+    <ul id="userNameId">
+    </ul>
+    <ul id="userLastNameId">
+    </ul>
+    <ul id="userUserNameId">
+    </ul>
+    @foreach(var item in Model.UsersData) {
+    <script>
+        var li = document.createElement("li");
+        var ul = document.getElementById("userDataId");
+        li.innerHTML = "@item.Id";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("userNameId");
+        li.innerHTML = "@item.Name";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("userLastNameId");
+        li.innerHTML = "@item.LastName";
+        li.style.display = "none";
+        ul.appendChild(li);
+        li = document.createElement("li");
+        ul = document.getElementById("userUserNameId");
+        li.innerHTML = "@item.UserName";
+        li.style.display = "none";
+        ul.appendChild(li);
+    </script>
+    }
+    <div class="container bg-white rounded p-1">
+        <table id="tableHallOfFameId" class="display" style="width:100%">
+            <thead id="theadHallOfFameId">
+
+            </thead>
+            <tbody id="tbodyHallOfFameId">
+
+            </tbody>
+            <tfoot id="tfootHallOfFameId">
+
+            </tfoot>
+        </table>
+    </div>
+    </div>
+
+    <partial name="_ScriptsPartial" />
+    <script src="~/js/HallOfFame.js" asp-append-version="true"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" asp-append-version="true"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+</body>
